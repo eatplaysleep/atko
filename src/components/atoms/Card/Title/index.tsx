@@ -3,8 +3,6 @@
 import React from 'react';
 // nodejs library that concatenates classes
 import classNames from 'classnames';
-// nodejs library to set properties for components
-import PropTypes from 'prop-types';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 // @material-ui/icons
@@ -12,14 +10,18 @@ import { makeStyles } from '@material-ui/core/styles';
 // core components
 import styles from './style';
 
+interface CardTitleProps extends MaterialComponentProps {
+	type?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+}
+
 const useStyles = makeStyles(styles);
 
-const CardTitle = props => {
+export const CardTitle = (props: CardTitleProps) => {
 	const classes = useStyles();
-	const { className, children, type, plain, ...rest } = props;
+	const { className, children, type = 'h4', ...rest } = props;
 	const cardTitleClasses = classNames({
 		[classes.cardTitle]: true,
-		[className]: className !== undefined,
+		[className as string]: className !== undefined,
 	});
 	const Wrapper = type;
 	return (
@@ -28,16 +30,3 @@ const CardTitle = props => {
 		</Wrapper>
 	);
 };
-
-CardTitle.propTypes = {
-	className: PropTypes.string,
-	type: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
-	plain: PropTypes.bool,
-	children: PropTypes.node,
-};
-
-CardTitle.defaultProps = {
-	type: 'h4',
-};
-
-export default CardTitle;
