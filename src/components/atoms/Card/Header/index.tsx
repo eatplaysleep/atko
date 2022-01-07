@@ -10,10 +10,8 @@ import { makeStyles } from '@material-ui/core/styles';
 // core components
 import styles from './style';
 
-type Color = 'warning' | 'success' | 'danger' | 'info' | 'primary';
-
 interface CardHeaderProps extends MaterialComponentProps {
-	color?: Color;
+	color?: Colors;
 	plain?: boolean;
 }
 
