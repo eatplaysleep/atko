@@ -11,7 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import styles from './style';
 
 interface CardSubtitleProps extends MaterialComponentProps {
-	type?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+	type?: TitleType;
 }
 
 const useStyles = makeStyles(styles);
