@@ -1,14 +1,7 @@
 /** @format */
 
 import * as React from 'react';
-import {
-	Badge,
-	Button,
-	Card,
-	CardBody,
-	CardFooter,
-	CardHeader,
-} from '../../components';
+import { Badge, Button, Card, CardBody, CardFooter, CardHeader } from '..';
 
 export const Home = () => {
 	return (
