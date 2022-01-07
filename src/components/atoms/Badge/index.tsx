@@ -8,30 +8,24 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 
 import styles from './style';
+import classNames from 'classnames';
+
+interface BadgeProps extends MaterialComponentProps {
+	color?: Colors;
+}
 
 const useStyles = makeStyles(styles);
 
-export const Badge = props => {
+export const Badge = (props: BadgeProps) => {
 	const classes = useStyles();
-	const { color, children } = props;
-	return (
-		<span className={classes.badge + ' ' + classes[color]}>{children}</span>
-	);
+	const { color = 'gray', children } = props;
+	const badgeClasses = classNames({
+		[classes.badge]: true,
+		[classes[color]]: color,
+	});
+	return <span className={badgeClasses}>{children}</span>;
 };
 
 Badge.defaultProps = {
 	color: 'gray',
-};
-
-Badge.propTypes = {
-	color: PropTypes.oneOf([
-		'primary',
-		'warning',
-		'danger',
-		'success',
-		'info',
-		'rose',
-		'gray',
-	]),
-	children: PropTypes.node,
 };
