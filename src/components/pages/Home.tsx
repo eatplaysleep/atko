@@ -1,7 +1,15 @@
 /** @format */
 
 import * as React from 'react';
-import { Badge, Button, Card, CardBody, CardFooter, CardHeader } from '..';
+import {
+	Badge,
+	Button,
+	Card,
+	CardBody,
+	CardFooter,
+	CardHeader,
+	Dropdown,
+} from '..';
 
 export const Home = () => {
 	return (
@@ -18,6 +26,17 @@ export const Home = () => {
 				</CardBody>
 				<CardFooter>This is a footer</CardFooter>
 			</Card>
+			<Dropdown
+				dropdownList={[
+					'Action',
+					'Another action',
+					'Something else here',
+					{ divider: true },
+					'Separated link',
+					{ divider: true },
+					'One more separated link',
+				]}
+			/>
 		</React.Fragment>
 	);
 };
