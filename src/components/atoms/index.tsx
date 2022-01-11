@@ -1,6 +1,6 @@
 /** @format */
 
-export * from './Button';
-export * from './Badge';
-export * from './Card';
-export * from './DropDown';
+export * from './Buttons';
+export * from './Data Display';
+export * from './Navigation';
+export * from './Surfaces';

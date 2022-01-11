@@ -16,7 +16,7 @@ import {
 	dangerBoxShadow,
 	roseColor,
 	roseBoxShadow,
-} from '../../../styles';
+} from '../../../../styles';
 
 const dropdownStyles = (theme: Theme) =>
 	createStyles({

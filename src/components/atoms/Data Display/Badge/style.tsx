@@ -8,7 +8,7 @@ import {
 	successColor,
 	infoColor,
 	roseColor,
-} from '../../../styles';
+} from '../../../../styles';
 
 const badgeStyle = createStyles({
 	badge: {

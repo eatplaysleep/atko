@@ -9,7 +9,7 @@ import {
 	successColor,
 	warningColor,
 	dangerColor,
-} from '../../../styles';
+} from '../../../../styles';
 
 const buttonStyle = createStyles({
 	button: {

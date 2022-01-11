@@ -1,5 +1,5 @@
 /** @format */
-import { titleStyle } from '../../../../styles';
+import { titleStyle } from '../../../../../styles';
 
 const cardTitleStyle = {
 	cardTitle: {

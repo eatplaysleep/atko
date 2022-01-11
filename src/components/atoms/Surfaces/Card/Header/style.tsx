@@ -7,7 +7,7 @@ import {
 	roseBoxShadow,
 	successBoxShadow,
 	warningBoxShadow,
-} from '../../../../styles';
+} from '../../../../../styles';
 
 const warningCardHeader = {
 	color: '#fff',
