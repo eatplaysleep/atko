@@ -19,7 +19,7 @@ type ButtonColors =
 	| Colors
 	| ('facebook' | 'twitter' | 'google' | 'github' | 'transparent');
 
-interface ButtonProps
+export interface ButtonProps
 	extends Omit<MuiButtonProps, 'href' | 'color' | 'size'>,
 		MaterialComponentProps {
 	color?: ButtonColors;
