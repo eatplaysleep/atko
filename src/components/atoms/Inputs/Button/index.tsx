@@ -19,25 +19,26 @@ type ButtonColors =
 	| Colors
 	| ('facebook' | 'twitter' | 'google' | 'github' | 'transparent');
 
-export interface ButtonProps
-	extends Omit<MuiButtonProps, 'href' | 'color' | 'size'>,
-		MaterialComponentProps {
-	color?: ButtonColors;
-	round?: boolean;
-	fullWidth?: boolean;
-	disabled?: boolean;
-	simple?: boolean;
-	size?: 'sm' | 'lg';
-	block?: boolean;
-	link?: boolean;
-	justIcon?: boolean;
-}
+// TODO: figure out how to handle ref in Typescript
+// export interface ButtonProps
+// 	extends Omit<MuiButtonProps, 'color' | 'size'>,
+// 		MaterialComponentProps {
+// 	color?: ButtonColors;
+// 	round?: boolean;
+// 	fullWidth?: boolean;
+// 	disabled?: boolean;
+// 	simple?: boolean;
+// 	size?: 'sm' | 'lg';
+// 	block?: boolean;
+// 	link?: boolean;
+// 	justIcon?: boolean;
+// }
 
-const makeComponentStyles = makeStyles(() => ({
+const useStyles = makeStyles(() => ({
 	...style,
 }));
 
-export const Button = React.forwardRef((props: ButtonProps, ref) => {
+export const Button = React.forwardRef((props: any, ref) => {
 	const {
 		color,
 		round,
@@ -50,9 +51,10 @@ export const Button = React.forwardRef((props: ButtonProps, ref) => {
 		link,
 		justIcon,
 		className,
+		...rest
 	} = props;
 
-	const classes = makeComponentStyles();
+	const classes = useStyles();
 
 	const btnClasses = classNames({
 		[classes.button]: true,
@@ -68,12 +70,7 @@ export const Button = React.forwardRef((props: ButtonProps, ref) => {
 		...(typeof className === 'string' ? { [className]: className } : {}),
 	});
 	return (
-		<MuiButton
-			// TODO fix {...props} and ref typing
-			// {...props}
-			// ref={ref}
-			className={btnClasses}
-		>
+		<MuiButton {...rest} ref={ref} className={btnClasses}>
 			{children}
 		</MuiButton>
 	);

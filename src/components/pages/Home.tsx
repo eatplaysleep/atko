@@ -9,6 +9,8 @@ import {
 	CardFooter,
 	CardHeader,
 	Dropdown,
+	LinearProgress,
+	TextInput,
 } from '..';
 
 export const Home = () => {
@@ -37,6 +39,8 @@ export const Home = () => {
 					'One more separated link',
 				]}
 			/>
+			<TextInput />
+			<LinearProgress />
 		</React.Fragment>
 	);
 };
