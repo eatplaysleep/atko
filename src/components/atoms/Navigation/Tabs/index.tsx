@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import { makeStyles } from '@material-ui/core/styles';
 import { Icon, Tab as MuiTab, Tabs as MuiTabs } from '@material-ui/core';
 // core components
-import { Card } from '../../../components';
+import { Card } from '../../../../components';
 
 import styles from './style';
 
@@ -36,7 +36,7 @@ export const Tabs = (props: TabProps) => {
 		setValue(value);
 	};
 	const classes = useStyles();
-	const { headerColor, plainTabs, tabs, title, rtlActive } = props;
+	const { headerColor = 'primary', plainTabs, tabs, title, rtlActive } = props;
 	const cardTitle = classNames({
 		[classes.cardTitle]: true,
 		[classes.cardTitleRTL]: rtlActive,
