@@ -1,7 +1,6 @@
 /** @format */
 
-import { createStyles } from '@material-ui/core/styles';
-import { Theme } from '@material-ui/core';
+import { createStyles, Theme } from '@material-ui/core/styles';
 import {
 	fontStyle,
 	primaryColor,

@@ -9,6 +9,8 @@ import {
 	Footer,
 	Grid,
 	LinearProgress,
+	NavBar,
+	NavBarLinks,
 	Tabs,
 	TextInput,
 } from '../../components';
@@ -16,7 +18,8 @@ import { Build, Chat, Face } from '@material-ui/icons';
 import { Box, Paper, Theme } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
 
-export const Home = () => {
+export const Home = (props: any) => {
+	const { ...rest } = props;
 	const GridItem = styled(Paper)(({ theme }: { theme: Theme }) => {
 		return {
 			...theme?.typography?.body2,
@@ -47,6 +50,14 @@ export const Home = () => {
 
 	return (
 		<React.Fragment>
+			<NavBar
+				color='primary'
+				brand='Atko, Inc.'
+				rightLinks={<NavBarLinks />}
+				fixed
+				changeColorOnScroll={{ height: 400, color: 'white' }}
+				{...rest}
+			/>
 			<Button color='primary'>
 				Notifications<Badge>4</Badge>
 			</Button>
