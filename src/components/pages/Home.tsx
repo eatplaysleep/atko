@@ -7,16 +7,25 @@ import {
 	Card,
 	Dropdown,
 	Footer,
+	Grid,
 	LinearProgress,
 	Tabs,
 	TextInput,
 } from '../../components';
-
-import Face from '@material-ui/icons/Face';
-import Chat from '@material-ui/icons/Chat';
-import Build from '@material-ui/icons/Build';
+import { Build, Chat, Face } from '@material-ui/icons';
+import { Box, Paper, Theme } from '@material-ui/core';
+import { styled } from '@material-ui/core/styles';
 
 export const Home = () => {
+	const GridItem = styled(Paper)(({ theme }: { theme: Theme }) => {
+		return {
+			...theme?.typography?.body2,
+			padding: theme?.spacing(1),
+			textAlign: 'center',
+			color: theme?.palette?.text?.secondary,
+		};
+	});
+
 	const footerItems = [
 		{
 			href: 'https://www.creative-tim.com/?ref=mkr-footer',
@@ -44,7 +53,6 @@ export const Home = () => {
 
 			<Card>
 				<Card.Header color='primary'>This is a header</Card.Header>
-				{/* <CardBody>This is a body</CardBody> */}
 				<Card.Body title='Title' subtitle='Subtitle'>
 					Some body
 				</Card.Body>
@@ -111,7 +119,17 @@ export const Home = () => {
 						),
 					},
 				]}
-			></Tabs>
+			/>
+			<Box sx={{ flexGrow: 1 }}>
+				<Grid container spacing={3}>
+					<Grid item xs={8}>
+						<GridItem>xs=8</GridItem>
+					</Grid>
+					<Grid item xs={4}>
+						<GridItem>xs=4</GridItem>
+					</Grid>
+				</Grid>
+			</Box>
 			<Footer items={footerItems} />
 		</React.Fragment>
 	);
