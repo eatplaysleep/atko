@@ -1,17 +1,7 @@
 /** @format */
 
 import * as React from 'react';
-import {
-	Badge,
-	Button,
-	Card,
-	CardBody,
-	CardFooter,
-	CardHeader,
-	Dropdown,
-	LinearProgress,
-	TextInput,
-} from '..';
+import { Badge, Button, Card, Dropdown, LinearProgress, TextInput } from '..';
 
 export const Home = () => {
 	return (
@@ -21,12 +11,12 @@ export const Home = () => {
 			</Button>
 
 			<Card>
-				<CardHeader color='primary'>This is a header</CardHeader>
+				<Card.Header color='primary'>This is a header</Card.Header>
 				{/* <CardBody>This is a body</CardBody> */}
-				<CardBody title='Title' subtitle='Subtitle'>
+				<Card.Body title='Title' subtitle='Subtitle'>
 					Some body
-				</CardBody>
-				<CardFooter>This is a footer</CardFooter>
+				</Card.Body>
+				<Card.Footer>This is a footer</Card.Footer>
 			</Card>
 			<Dropdown
 				dropdownList={[

@@ -8,7 +8,8 @@ import { makeStyles } from '@material-ui/core/styles';
 // @material-ui/icons
 
 // core components
-import { CardTitle, CardSubtitle } from '..';
+import { CardTitle } from '../Title';
+import { CardSubtitle } from '../Subtitle';
 import styles from './style';
 
 interface CardBodyProps extends MaterialComponentProps {
@@ -43,3 +44,8 @@ export const CardBody = (props: CardBodyProps) => {
 		</div>
 	);
 };
+
+CardBody.Title = CardTitle;
+CardBody.Subtitle = CardSubtitle;
+
+export default CardBody;

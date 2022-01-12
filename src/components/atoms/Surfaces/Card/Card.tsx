@@ -7,7 +7,9 @@ import classNames from 'classnames';
 import { makeStyles } from '@material-ui/core/styles';
 // @material-ui/icons
 
-// core components
+import { CardBody } from './Body';
+import { CardFooter } from './Footer';
+import { CardHeader } from './Header';
 
 import styles from './style';
 
@@ -33,3 +35,9 @@ export const Card = (props: CardProps) => {
 		</div>
 	);
 };
+
+Card.Body = CardBody;
+Card.Footer = CardFooter;
+Card.Header = CardHeader;
+
+export default Card;
