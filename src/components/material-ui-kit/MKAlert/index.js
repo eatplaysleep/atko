@@ -40,10 +40,10 @@ function MKAlert({ color, dismissible, children, ...rest }) {
     <Fade in={mount} timeout={300}>
       <MKAlertRoot ownerState={{ color }} {...rest}>
         <MKBox
-          display="flex"
-          alignItems="center"
-          fontSize="1rem"
-          fontWeight="regular"
+          display='flex'
+          alignItems='center'
+          fontSize='1rem'
+          fontWeight='regular'
           color={color === 'light' ? 'dark' : 'white'}
         >
           {children}

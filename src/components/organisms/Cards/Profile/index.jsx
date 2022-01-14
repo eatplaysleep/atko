@@ -26,8 +26,8 @@ const ProfileCardRoot = () => (
         <Grid container spacing={2}>
           <Grid item xs={12} md={5} xl={4}>
             <ProfileInfoCard
-              title="profile information"
-              description="Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
+              title='profile information'
+              description='Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).'
               info={{
                 fullName: 'Alec M. Thompson',
                 mobile: '(44) 123 1234 123',
@@ -56,12 +56,12 @@ const ProfileCardRoot = () => (
             />
           </Grid>
           <Grid item xs={12} md={2} xl={4} sx={{ display: 'flex' }}>
-            <Divider orientation="vertical" sx={{ ml: -2, mr: 1 }} />
+            <Divider orientation='vertical' sx={{ ml: -2, mr: 1 }} />
             <ProfileSettingsCard />
-            <Divider orientation="vertical" />
+            <Divider orientation='vertical' />
           </Grid>
           <Grid item xs={12} md={5} xl={4} sx={{ pr: 2, display: 'flex' }}>
-            <AuthenticatorsCard title="authenticators" shadow={false} />
+            <AuthenticatorsCard title='authenticators' shadow={false} />
           </Grid>
         </Grid>
       </MKBox>

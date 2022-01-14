@@ -44,8 +44,8 @@ import bgImage from 'assets/images/bg-presentation.jpg';
 export const Home = () => (
   <>
     <MKBox
-      minHeight="75vh"
-      width="100%"
+      minHeight='75vh'
+      width='100%'
       sx={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
@@ -55,10 +55,10 @@ export const Home = () => (
       }}
     >
       <Container>
-        <Grid container item xs={12} lg={7} justifyContent="center" mx="auto">
+        <Grid container item xs={12} lg={7} justifyContent='center' mx='auto'>
           <MKTypography
-            variant="h1"
-            color="white"
+            variant='h1'
+            color='white'
             mt={-6}
             mb={1}
             sx={({ breakpoints, typography: { size } }) => ({
@@ -70,9 +70,9 @@ export const Home = () => (
             Material Kit 2 React{' '}
           </MKTypography>
           <MKTypography
-            variant="body1"
-            color="white"
-            textAlign="center"
+            variant='body1'
+            color='white'
+            textAlign='center'
             px={{ xs: 6, lg: 12 }}
             mt={1}
           >
@@ -147,11 +147,11 @@ export const Home = () => (
       <MKBox pt={18} pb={6}>
         <Container>
           <Grid container spacing={3}>
-            <Grid item xs={12} lg={5} ml="auto" sx={{ textAlign: { xs: 'center', lg: 'left' } }}>
-              <MKTypography variant="h4" fontWeight="bold" mb={0.5}>
+            <Grid item xs={12} lg={5} ml='auto' sx={{ textAlign: { xs: 'center', lg: 'left' } }}>
+              <MKTypography variant='h4' fontWeight='bold' mb={0.5}>
                 Thank you for your support!
               </MKTypography>
-              <MKTypography variant="body1" color="text">
+              <MKTypography variant='body1' color='text'>
                 We deliver the best web products
               </MKTypography>
             </Grid>
@@ -164,32 +164,32 @@ export const Home = () => (
               sx={{ textAlign: { xs: 'center', lg: 'right' } }}
             >
               <MKSocialButton
-                component="a"
-                href="https://twitter.com/intent/tweet?text=Check%20Material%20Design%20System%20made%20by%20%40CreativeTim%20%23webdesign%20%23designsystem%20%23mui5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fmaterial-kit-react"
-                target="_blank"
-                color="twitter"
+                component='a'
+                href='https://twitter.com/intent/tweet?text=Check%20Material%20Design%20System%20made%20by%20%40CreativeTim%20%23webdesign%20%23designsystem%20%23mui5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fmaterial-kit-react'
+                target='_blank'
+                color='twitter'
                 sx={{ mr: 1 }}
               >
-                <i className="fab fa-twitter" />
+                <i className='fab fa-twitter' />
                 &nbsp;Tweet
               </MKSocialButton>
               <MKSocialButton
-                component="a"
-                href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-kit-react"
-                target="_blank"
-                color="facebook"
+                component='a'
+                href='https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-kit-react'
+                target='_blank'
+                color='facebook'
                 sx={{ mr: 1 }}
               >
-                <i className="fab fa-facebook" />
+                <i className='fab fa-facebook' />
                 &nbsp;Share
               </MKSocialButton>
               <MKSocialButton
-                component="a"
-                href="https://www.pinterest.com/pin/create/button/?url=https://www.creative-tim.com/product/material-kit-react"
-                target="_blank"
-                color="pinterest"
+                component='a'
+                href='https://www.pinterest.com/pin/create/button/?url=https://www.creative-tim.com/product/material-kit-react'
+                target='_blank'
+                color='pinterest'
               >
-                <i className="fab fa-pinterest" />
+                <i className='fab fa-pinterest' />
                 &nbsp;Pin it
               </MKSocialButton>
             </Grid>

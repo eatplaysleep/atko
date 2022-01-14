@@ -57,8 +57,8 @@ const DefaultNavbarDropdown = ({
         {...rest}
         mx={1}
         p={1}
-        display="flex"
-        alignItems="baseline"
+        display='flex'
+        alignItems='baseline'
         color={light ? 'white' : 'dark'}
         opacity={light ? 1 : 0.6}
         sx={{ cursor: 'pointer', userSelect: 'none' }}
@@ -66,23 +66,23 @@ const DefaultNavbarDropdown = ({
         {...(href && linkComponent)}
       >
         <MKTypography
-          variant="body2"
+          variant='body2'
           lineHeight={1}
-          color="inherit"
+          color='inherit'
           sx={{ alignSelf: 'center', '& *': { verticalAlign: 'middle' } }}
         >
           {icon}
         </MKTypography>
         <MKTypography
-          variant="button"
-          fontWeight="regular"
-          textTransform="capitalize"
+          variant='button'
+          fontWeight='regular'
+          textTransform='capitalize'
           color={light ? 'white' : 'dark'}
           sx={{ fontWeight: '100%', ml: 1, mr: 0.25 }}
         >
           {name}
         </MKTypography>
-        <MKTypography variant="body2" color={light ? 'white' : 'dark'} ml="auto">
+        <MKTypography variant='body2' color={light ? 'white' : 'dark'} ml='auto'>
           <Icon sx={{ fontWeight: 'normal', verticalAlign: 'middle' }}>
             {collapse && 'keyboard_arrow_down'}
           </Icon>

@@ -54,11 +54,11 @@ function ProfileInfoCardRoot({ title, description, info, social, action, shadow 
 
   // Render the card info items
   const renderItems = labels.map((label, key) => (
-    <MKBox key={label} display="flex" py={1} pr={2}>
-      <MKTypography variant="button" fontWeight="bold" textTransform="capitalize">
+    <MKBox key={label} display='flex' py={1} pr={2}>
+      <MKTypography variant='button' fontWeight='bold' textTransform='capitalize'>
         {label}: &nbsp;
       </MKTypography>
-      <MKTypography variant="button" fontWeight="regular" color="text">
+      <MKTypography variant='button' fontWeight='regular' color='text'>
         &nbsp;{values[key]}
       </MKTypography>
     </MKBox>
@@ -68,10 +68,10 @@ function ProfileInfoCardRoot({ title, description, info, social, action, shadow 
   const renderSocial = social.map(({ link, icon, color }) => (
     <MKBox
       key={color}
-      component="a"
+      component='a'
       href={link}
-      target="_blank"
-      rel="noreferrer"
+      target='_blank'
+      rel='noreferrer'
       fontSize={size.lg}
       color={socialMediaColors[color].main}
       pr={1}
@@ -84,19 +84,19 @@ function ProfileInfoCardRoot({ title, description, info, social, action, shadow 
 
   return (
     <Card sx={{ pr: 1, height: '100%', boxShadow: !shadow && 'none' }}>
-      <MKBox display="flex" justifyContent="space-between" alignItems="center" pt={2} px={2}>
-        <MKTypography variant="h6" fontWeight="medium" textTransform="capitalize">
+      <MKBox display='flex' justifyContent='space-between' alignItems='center' pt={2} px={2}>
+        <MKTypography variant='h6' fontWeight='medium' textTransform='capitalize'>
           {title}
         </MKTypography>
-        <MKTypography component={Link} to={action.route} variant="body2" color="secondary">
-          <Tooltip title={action.tooltip} placement="top">
+        <MKTypography component={Link} to={action.route} variant='body2' color='secondary'>
+          <Tooltip title={action.tooltip} placement='top'>
             <Icon>edit</Icon>
           </Tooltip>
         </MKTypography>
       </MKBox>
       <MKBox p={2}>
         <MKBox mb={2} lineHeight={1}>
-          <MKTypography variant="button" color="text" fontWeight="light">
+          <MKTypography variant='button' color='text' fontWeight='light'>
             {description}
           </MKTypography>
         </MKBox>
@@ -105,8 +105,8 @@ function ProfileInfoCardRoot({ title, description, info, social, action, shadow 
         </MKBox>
         <MKBox>
           {renderItems}
-          <MKBox display="flex" py={1} pr={2}>
-            <MKTypography variant="button" fontWeight="bold" textTransform="capitalize">
+          <MKBox display='flex' py={1} pr={2}>
+            <MKTypography variant='button' fontWeight='bold' textTransform='capitalize'>
               social: &nbsp;
             </MKTypography>
             {renderSocial}

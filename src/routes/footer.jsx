@@ -72,15 +72,15 @@ export const footer = {
     },
   ],
   copyright: (
-    <MKTypography variant="button" fontWeight="regular">
+    <MKTypography variant='button' fontWeight='regular'>
       All rights reserved. Copyright &copy; {date} Material Kit by{' '}
       <MKTypography
-        component="a"
-        href="https://www.creative-tim.com"
-        target="_blank"
-        rel="noreferrer"
-        variant="button"
-        fontWeight="regular"
+        component='a'
+        href='https://www.creative-tim.com'
+        target='_blank'
+        rel='noreferrer'
+        variant='button'
+        fontWeight='regular'
       >
         Creative Tim
       </MKTypography>

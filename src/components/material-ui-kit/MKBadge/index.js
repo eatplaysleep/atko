@@ -29,7 +29,7 @@ const MKBadge = forwardRef(
       {...rest}
       ownerState={{ color, variant, size, circular, indicator, border, container, children }}
       ref={ref}
-      color="default"
+      color='default'
     >
       {children}
     </MKBadgeRoot>

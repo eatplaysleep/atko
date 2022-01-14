@@ -29,14 +29,14 @@ import MKProgressRoot from 'components/material-ui-kit/MKProgress/MKProgressRoot
 const MKProgress = forwardRef(({ variant, color, value, label, ...rest }, ref) => (
   <>
     {label && (
-      <MKTypography variant="button" fontWeight="medium" color="text">
+      <MKTypography variant='button' fontWeight='medium' color='text'>
         {value}%
       </MKTypography>
     )}
     <MKProgressRoot
       {...rest}
       ref={ref}
-      variant="determinate"
+      variant='determinate'
       value={value}
       ownerState={{ color, value, variant }}
     />

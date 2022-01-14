@@ -28,8 +28,8 @@ const MKSocialButtonComponent = forwardRef(
     <MKSocialButtonRoot
       {...rest}
       ref={ref}
-      variant="contained"
-      color="primary"
+      variant='contained'
+      color='primary'
       size={size}
       ownerState={{ color, size, iconOnly, circular }}
     >

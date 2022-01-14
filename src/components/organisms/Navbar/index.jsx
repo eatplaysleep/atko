@@ -119,10 +119,10 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
                 {cols.map((col, index) => (
                   <Fragment key={col.name}>
                     <MKTypography
-                      display="block"
-                      variant="button"
-                      fontWeight="bold"
-                      textTransform="capitalize"
+                      display='block'
+                      variant='button'
+                      fontWeight='bold'
+                      textTransform='capitalize'
                       py={1}
                       px={0.5}
                       mt={index !== 0 ? 2 : 0}
@@ -137,12 +137,12 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
                         href={item.href ? item.href : (e) => e.preventDefault()}
                         target={item.href ? '_blank' : ''}
                         rel={item.href ? 'noreferrer' : 'noreferrer'}
-                        minWidth="11.25rem"
-                        display="block"
-                        variant="button"
-                        color="text"
-                        textTransform="capitalize"
-                        fontWeight="regular"
+                        minWidth='11.25rem'
+                        display='block'
+                        variant='button'
+                        color='text'
+                        textTransform='capitalize'
+                        fontWeight='regular'
                         py={0.625}
                         px={2}
                         sx={({ palette: { grey, dark }, borders: { borderRadius } }) => ({
@@ -164,7 +164,7 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
                 {key !== 0 && (
                   <Divider
                     key={dividerKey}
-                    orientation="vertical"
+                    orientation='vertical'
                     sx={{
                       position: 'absolute',
                       top: '50%',
@@ -199,11 +199,11 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
           <MKTypography
             key={item.name}
             {...(item.route ? routeComponent : linkComponent)}
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            variant="button"
-            textTransform="capitalize"
+            display='flex'
+            justifyContent='space-between'
+            alignItems='center'
+            variant='button'
+            textTransform='capitalize'
             minWidth={item.description ? '14rem' : '12rem'}
             color={item.description ? 'dark' : 'text'}
             fontWeight={item.description ? 'bold' : 'regular'}
@@ -240,10 +240,10 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
               <MKBox>
                 {item.name}
                 <MKTypography
-                  display="block"
-                  variant="button"
-                  color="text"
-                  fontWeight="regular"
+                  display='block'
+                  variant='button'
+                  color='text'
+                  fontWeight='regular'
                   sx={{ transition: 'all 300ms linear' }}
                 >
                   {item.description}
@@ -254,7 +254,7 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
             )}
             {item.collapse && (
               <Icon
-                fontSize="small"
+                fontSize='small'
                 sx={{ fontWeight: 'normal', verticalAlign: 'middle', mr: -0.5 }}
               >
                 keyboard_arrow_right
@@ -274,7 +274,7 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
       anchorEl={dropdown}
       popperRef={null}
       open={Boolean(dropdown)}
-      placement="top-start"
+      placement='top-start'
       transition
       style={{ zIndex: 10 }}
       modifiers={[
@@ -302,13 +302,13 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
             background: ({ palette: { white } }) => white.main,
           }}
         >
-          <MKBox borderRadius="lg">
-            <MKTypography variant="h1" color="white">
+          <MKBox borderRadius='lg'>
+            <MKTypography variant='h1' color='white'>
               <Icon ref={setArrowRef} sx={{ mt: -3 }}>
                 arrow_drop_up
               </Icon>
             </MKTypography>
-            <MKBox shadow="lg" borderRadius="lg" p={2} mt={2}>
+            <MKBox shadow='lg' borderRadius='lg' p={2} mt={2}>
               {renderRoutes}
             </MKBox>
           </MKBox>
@@ -343,11 +343,11 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
                   <MKTypography
                     key={item.name}
                     {...(item.route ? routeComponent : linkComponent)}
-                    display="flex"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    variant="button"
-                    textTransform="capitalize"
+                    display='flex'
+                    justifyContent='space-between'
+                    alignItems='center'
+                    variant='button'
+                    textTransform='capitalize'
                     minWidth={item.description ? '14rem' : '12rem'}
                     color={item.description ? 'dark' : 'text'}
                     fontWeight={item.description ? 'bold' : 'regular'}
@@ -372,10 +372,10 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
                       <MKBox>
                         {item.name}
                         <MKTypography
-                          display="block"
-                          variant="button"
-                          color="text"
-                          fontWeight="regular"
+                          display='block'
+                          variant='button'
+                          color='text'
+                          fontWeight='regular'
                           sx={{ transition: 'all 300ms linear' }}
                         >
                           {item.description}
@@ -386,7 +386,7 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
                     )}
                     {item.collapse && (
                       <Icon
-                        fontSize="small"
+                        fontSize='small'
                         sx={{ fontWeight: 'normal', verticalAlign: 'middle', mr: -0.5 }}
                       >
                         keyboard_arrow_right
@@ -408,7 +408,7 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
       anchorEl={nestedDropdown}
       popperRef={null}
       open={Boolean(nestedDropdown)}
-      placement="right-start"
+      placement='right-start'
       transition
       style={{ zIndex: 10 }}
       onMouseEnter={() => {
@@ -428,8 +428,8 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
             background: ({ palette: { white } }) => white.main,
           }}
         >
-          <MKBox ml={2.5} mt={-2.5} borderRadius="lg">
-            <MKBox shadow="lg" borderRadius="lg" py={1.5} px={1} mt={2}>
+          <MKBox ml={2.5} mt={-2.5} borderRadius='lg'>
+            <MKBox shadow='lg' borderRadius='lg' py={1.5} px={1} mt={2}>
               {renderNestedRoutes}
             </MKBox>
           </MKBox>
@@ -446,7 +446,7 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
         my={relative ? 0 : 2}
         mx={relative ? 0 : 3}
         width={relative ? '100%' : 'calc(100% - 48px)'}
-        borderRadius="xl"
+        borderRadius='xl'
         shadow={transparent ? 'none' : 'md'}
         color={light ? 'white' : 'dark'}
         position={relative ? 'relative' : 'absolute'}
@@ -457,22 +457,22 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
           backdropFilter: transparent ? 'none' : `saturate(200%) blur(30px)`,
         })}
       >
-        <MKBox display="flex" justifyContent="space-between" alignItems="center">
+        <MKBox display='flex' justifyContent='space-between' alignItems='center'>
           <MKBox
             component={Link}
-            to="/"
+            to='/'
             lineHeight={1}
             py={transparent ? 1.5 : 0.75}
             pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
           >
-            <MKTypography variant="button" fontWeight="bold" color={light ? 'white' : 'dark'}>
+            <MKTypography variant='button' fontWeight='bold' color={light ? 'white' : 'dark'}>
               {brand}
             </MKTypography>
           </MKBox>
           <MKBox
-            color="inherit"
+            color='inherit'
             display={{ xs: 'none', lg: 'flex' }}
-            ml="auto"
+            ml='auto'
             mr={center ? 'auto' : 0}
           >
             {renderNavbarItems}
@@ -489,23 +489,23 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
                       : 'gradient'
                   }
                   color={action.color ? action.color : 'info'}
-                  size="small"
+                  size='small'
                 >
                   {action.label}
                 </MKButton>
               ) : (
                 <MKButton
-                  component="a"
+                  component='a'
                   href={action.route}
-                  target="_blank"
-                  rel="noreferrer"
+                  target='_blank'
+                  rel='noreferrer'
                   variant={
                     action.color === 'white' || action.color === 'default'
                       ? 'contained'
                       : 'gradient'
                   }
                   color={action.color ? action.color : 'info'}
-                  size="small"
+                  size='small'
                 >
                   {action.label}
                 </MKButton>
@@ -520,13 +520,13 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
             sx={{ cursor: 'pointer' }}
             onClick={openMobileNavbar}
           >
-            <Icon fontSize="default">{mobileNavbar ? 'close' : 'menu'}</Icon>
+            <Icon fontSize='default'>{mobileNavbar ? 'close' : 'menu'}</Icon>
           </MKBox>
         </MKBox>
         <MKBox
           bgColor={transparent ? 'white' : 'transparent'}
           shadow={transparent ? 'lg' : 'none'}
-          borderRadius="xl"
+          borderRadius='xl'
           px={transparent ? 2 : 0}
         >
           {mobileView && <NavbarMobile routes={routes} open={mobileNavbar} />}

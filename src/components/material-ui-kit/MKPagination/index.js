@@ -57,9 +57,9 @@ const MKPagination = forwardRef(
           </MKPaginationItemRoot>
         ) : (
           <MKBox
-            display="flex"
+            display='flex'
             justifyContent={placementValue}
-            alignItems="center"
+            alignItems='center'
             sx={{ listStyle: 'none' }}
           >
             {children}

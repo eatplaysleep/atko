@@ -58,44 +58,44 @@ const ProfileCardHeaderRoot = ({ children }) => {
   const handleSetTabValue = (event, newValue) => setTabValue(newValue);
 
   return (
-    <MKBox position="relative" mb={5}>
-      <Grid container spacing={3} alignItems="center">
+    <MKBox position='relative' mb={5}>
+      <Grid container spacing={3} alignItems='center'>
         <Grid item>
-          <MKAvatar src={burceMars} alt="profile-image" size="xl" shadow="sm" />
+          <MKAvatar src={burceMars} alt='profile-image' size='xl' shadow='sm' />
         </Grid>
         <Grid item>
-          <MKBox height="100%" mt={0.5} lineHeight={1}>
-            <MKTypography variant="h5" fontWeight="medium">
+          <MKBox height='100%' mt={0.5} lineHeight={1}>
+            <MKTypography variant='h5' fontWeight='medium'>
               Richard Davis
             </MKTypography>
-            <MKTypography variant="button" color="text" fontWeight="regular">
+            <MKTypography variant='button' color='text' fontWeight='regular'>
               CEO / Co-Founder
             </MKTypography>
           </MKBox>
         </Grid>
         <Grid item xs={12} md={6} lg={4} sx={{ ml: 'auto' }}>
-          <AppBar position="static">
+          <AppBar position='static'>
             <Tabs orientation={tabsOrientation} value={tabValue} onChange={handleSetTabValue}>
               <Tab
-                label="App"
+                label='App'
                 icon={
-                  <Icon fontSize="small" sx={{ mt: -0.25 }}>
+                  <Icon fontSize='small' sx={{ mt: -0.25 }}>
                     home
                   </Icon>
                 }
               />
               <Tab
-                label="Message"
+                label='Message'
                 icon={
-                  <Icon fontSize="small" sx={{ mt: -0.25 }}>
+                  <Icon fontSize='small' sx={{ mt: -0.25 }}>
                     email
                   </Icon>
                 }
               />
               <Tab
-                label="Settings"
+                label='Settings'
                 icon={
-                  <Icon fontSize="small" sx={{ mt: -0.25 }}>
+                  <Icon fontSize='small' sx={{ mt: -0.25 }}>
                     settings
                   </Icon>
                 }

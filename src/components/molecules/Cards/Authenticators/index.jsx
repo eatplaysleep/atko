@@ -45,11 +45,11 @@ function AuthenticatorsCardRoot({ title, description, data, shadow }) {
 
   // Render the card info items
   const renderData = labels.map((label, key) => (
-    <MKBox key={label} display="flex" py={1} pr={2}>
-      <MKTypography variant="button" fontWeight="bold" textTransform="capitalize">
+    <MKBox key={label} display='flex' py={1} pr={2}>
+      <MKTypography variant='button' fontWeight='bold' textTransform='capitalize'>
         {label}: &nbsp;
       </MKTypography>
-      <MKTypography variant="button" fontWeight="regular" color="text">
+      <MKTypography variant='button' fontWeight='regular' color='text'>
         &nbsp;{values[key]}
       </MKTypography>
     </MKBox>
@@ -57,15 +57,15 @@ function AuthenticatorsCardRoot({ title, description, data, shadow }) {
 
   return (
     <Card sx={{ height: '100%', boxShadow: !shadow && 'none' }}>
-      <MKBox display="flex" justifyContent="space-between" alignItems="center" pt={2} px={2}>
-        <MKTypography variant="h6" fontWeight="medium" textTransform="capitalize">
+      <MKBox display='flex' justifyContent='space-between' alignItems='center' pt={2} px={2}>
+        <MKTypography variant='h6' fontWeight='medium' textTransform='capitalize'>
           {title}
         </MKTypography>
       </MKBox>
       <MKBox p={2}>
         {description && (
           <MKBox mb={2} lineHeight={1}>
-            <MKTypography variant="button" color="text" fontWeight="light">
+            <MKTypography variant='button' color='text' fontWeight='light'>
               {description}
             </MKTypography>
           </MKBox>

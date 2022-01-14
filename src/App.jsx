@@ -56,10 +56,10 @@ const App = () => {
       />
       <Routes>
         {getRoutes(navbarRoutes)}
-        <Route path="/" element={<Home />} />
-        <Route path="/signin" element={<SignInBasic />} />
-        <Route path="/me" element={<Me />} />
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/signin' element={<SignInBasic />} />
+        <Route path='/me' element={<Me />} />
+        <Route path='*' element={<Navigate to='/' />} />
       </Routes>
       <MKBox pt={6} px={1} mt={6}>
         <Footer content={footerRoutes} />

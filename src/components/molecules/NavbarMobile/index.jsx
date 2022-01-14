@@ -52,10 +52,10 @@ const DefaultNavbarMobile = ({ routes, open }) => {
                 {item.collapse ? (
                   <>
                     <MKTypography
-                      display="block"
-                      variant="button"
-                      fontWeight="bold"
-                      textTransform="capitalize"
+                      display='block'
+                      variant='button'
+                      fontWeight='bold'
+                      textTransform='capitalize'
                       py={1}
                       px={0.5}
                     >
@@ -69,12 +69,12 @@ const DefaultNavbarMobile = ({ routes, open }) => {
                         href={el.href ? el.href : ''}
                         target={el.href ? '_blank' : ''}
                         rel={el.href ? 'noreferrer' : 'noreferrer'}
-                        minWidth="11.25rem"
-                        display="block"
-                        variant="button"
-                        color="text"
-                        textTransform="capitalize"
-                        fontWeight="regular"
+                        minWidth='11.25rem'
+                        display='block'
+                        variant='button'
+                        color='text'
+                        textTransform='capitalize'
+                        fontWeight='regular'
                         py={0.625}
                         px={2}
                         sx={({ palette: { grey, dark }, borders: { borderRadius } }) => ({
@@ -95,7 +95,7 @@ const DefaultNavbarMobile = ({ routes, open }) => {
                 ) : (
                   <MKBox
                     key={item.key}
-                    display="block"
+                    display='block'
                     component={item.route ? Link : MuiLink}
                     to={item.route ? item.route : ''}
                     href={item.href ? item.href : ''}
@@ -119,18 +119,18 @@ const DefaultNavbarMobile = ({ routes, open }) => {
                     })}
                   >
                     <MKTypography
-                      display="block"
-                      variant="button"
-                      fontWeight="bold"
-                      textTransform="capitalize"
+                      display='block'
+                      variant='button'
+                      fontWeight='bold'
+                      textTransform='capitalize'
                     >
                       {item.name}
                     </MKTypography>
                     <MKTypography
-                      display="block"
-                      variant="button"
-                      color="text"
-                      fontWeight="regular"
+                      display='block'
+                      variant='button'
+                      color='text'
+                      fontWeight='regular'
                       sx={{ transition: 'all 300ms linear' }}
                     >
                       {item.description}
@@ -145,8 +145,8 @@ const DefaultNavbarMobile = ({ routes, open }) => {
   );
 
   return (
-    <Collapse in={Boolean(open)} timeout="auto" unmountOnExit>
-      <MKBox width="calc(100% + 1.625rem)" my={2} ml={-2}>
+    <Collapse in={Boolean(open)} timeout='auto' unmountOnExit>
+      <MKBox width='calc(100% + 1.625rem)' my={2} ml={-2}>
         {renderNavbarItems}
       </MKBox>
     </Collapse>

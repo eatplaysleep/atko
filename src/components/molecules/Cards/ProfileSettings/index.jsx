@@ -34,75 +34,75 @@ export const ProfileSettingsCard = () => {
   return (
     <Card sx={{ boxShadow: 'none' }}>
       <MKBox p={2}>
-        <MKTypography variant="h6" fontWeight="medium" textTransform="capitalize">
+        <MKTypography variant='h6' fontWeight='medium' textTransform='capitalize'>
           platform settings
         </MKTypography>
       </MKBox>
       <MKBox pt={1} pb={2} px={2} lineHeight={1.25}>
-        <MKTypography variant="caption" fontWeight="bold" color="text" textTransform="uppercase">
+        <MKTypography variant='caption' fontWeight='bold' color='text' textTransform='uppercase'>
           account
         </MKTypography>
-        <MKBox display="flex" alignItems="center" mb={0.5} ml={-1.5}>
+        <MKBox display='flex' alignItems='center' mb={0.5} ml={-1.5}>
           <MKBox mt={0.5}>
             <Switch checked={followsMe} onChange={() => setFollowsMe(!followsMe)} />
           </MKBox>
-          <MKBox width="80%" ml={0.5}>
-            <MKTypography variant="button" fontWeight="regular" color="text">
+          <MKBox width='80%' ml={0.5}>
+            <MKTypography variant='button' fontWeight='regular' color='text'>
               Email me when someone follows me
             </MKTypography>
           </MKBox>
         </MKBox>
-        <MKBox display="flex" alignItems="center" mb={0.5} ml={-1.5}>
+        <MKBox display='flex' alignItems='center' mb={0.5} ml={-1.5}>
           <MKBox mt={0.5}>
             <Switch checked={answersPost} onChange={() => setAnswersPost(!answersPost)} />
           </MKBox>
-          <MKBox width="80%" ml={0.5}>
-            <MKTypography variant="button" fontWeight="regular" color="text">
+          <MKBox width='80%' ml={0.5}>
+            <MKTypography variant='button' fontWeight='regular' color='text'>
               Email me when someone answers on my post
             </MKTypography>
           </MKBox>
         </MKBox>
-        <MKBox display="flex" alignItems="center" mb={0.5} ml={-1.5}>
+        <MKBox display='flex' alignItems='center' mb={0.5} ml={-1.5}>
           <MKBox mt={0.5}>
             <Switch checked={mentionsMe} onChange={() => setMentionsMe(!mentionsMe)} />
           </MKBox>
-          <MKBox width="80%" ml={0.5}>
-            <MKTypography variant="button" fontWeight="regular" color="text">
+          <MKBox width='80%' ml={0.5}>
+            <MKTypography variant='button' fontWeight='regular' color='text'>
               Email me when someone mentions me
             </MKTypography>
           </MKBox>
         </MKBox>
         <MKBox mt={3}>
-          <MKTypography variant="caption" fontWeight="bold" color="text" textTransform="uppercase">
+          <MKTypography variant='caption' fontWeight='bold' color='text' textTransform='uppercase'>
             application
           </MKTypography>
         </MKBox>
-        <MKBox display="flex" alignItems="center" mb={0.5} ml={-1.5}>
+        <MKBox display='flex' alignItems='center' mb={0.5} ml={-1.5}>
           <MKBox mt={0.5}>
             <Switch checked={newLaunches} onChange={() => setNewLaunches(!newLaunches)} />
           </MKBox>
-          <MKBox width="80%" ml={0.5}>
-            <MKTypography variant="button" fontWeight="regular" color="text">
+          <MKBox width='80%' ml={0.5}>
+            <MKTypography variant='button' fontWeight='regular' color='text'>
               New launches and projects
             </MKTypography>
           </MKBox>
         </MKBox>
-        <MKBox display="flex" alignItems="center" mb={0.5} ml={-1.5}>
+        <MKBox display='flex' alignItems='center' mb={0.5} ml={-1.5}>
           <MKBox mt={0.5}>
             <Switch checked={productUpdate} onChange={() => setProductUpdate(!productUpdate)} />
           </MKBox>
-          <MKBox width="80%" ml={0.5}>
-            <MKTypography variant="button" fontWeight="regular" color="text">
+          <MKBox width='80%' ml={0.5}>
+            <MKTypography variant='button' fontWeight='regular' color='text'>
               Monthly product updates
             </MKTypography>
           </MKBox>
         </MKBox>
-        <MKBox display="flex" alignItems="center" mb={0.5} ml={-1.5}>
+        <MKBox display='flex' alignItems='center' mb={0.5} ml={-1.5}>
           <MKBox mt={0.5}>
             <Switch checked={newsletter} onChange={() => setNewsletter(!newsletter)} />
           </MKBox>
-          <MKBox width="80%" ml={0.5}>
-            <MKTypography variant="button" fontWeight="regular" color="text">
+          <MKBox width='80%' ml={0.5}>
+            <MKTypography variant='button' fontWeight='regular' color='text'>
               Subscribe to newsletter
             </MKTypography>
           </MKBox>
