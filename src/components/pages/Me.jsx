@@ -16,33 +16,10 @@
  * @format
  */
 
-import { Container } from '@mui/material';
-
-// Material Kit 2 React components
-import { MKBox, ProfileCard } from 'components';
-
-// Images
-import bgImage from 'assets/images/city-profile.jpg';
+import { PageLayout, ProfileCard } from 'components';
 
 export const Me = () => (
-  <MKBox bgColor="white">
-    <MKBox
-      minHeight="50vmin"
-      width="100%"
-      sx={{
-        backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
-          `${linearGradient(
-            rgba(gradients.dark.main, 0.8),
-            rgba(gradients.dark.state, 0.8)
-          )}, url(${bgImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'top',
-        display: 'grid',
-        placeItems: 'center',
-      }}
-    />
-    <Container>
-      <ProfileCard />
-    </Container>
-  </MKBox>
+  <PageLayout>
+    <ProfileCard />
+  </PageLayout>
 );
