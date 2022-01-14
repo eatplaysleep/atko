@@ -61,9 +61,6 @@ const App = () => {
         <Route path='/me' element={<Me />} />
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>
-      <MKBox pt={6} px={1} mt={6}>
-        <Footer content={footerRoutes} />
-      </MKBox>
     </ThemeProvider>
   );
 };

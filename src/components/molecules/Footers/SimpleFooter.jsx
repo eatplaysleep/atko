@@ -27,7 +27,7 @@ import { MKBox, MKTypography } from 'components';
 // Material Kit 2 React base styles
 import typography from 'assets/theme/base/typography';
 
-const SimpleFooterComponent = ({ company, links, light }) => {
+const SimpleFooterComponent = ({ company, links, light, ...props }) => {
   const { href, name } = company;
   const { size } = typography;
 
@@ -49,57 +49,59 @@ const SimpleFooterComponent = ({ company, links, light }) => {
     ));
 
   return (
-    <Container>
-      <MKBox
-        width='100%'
-        display='flex'
-        flexDirection={{ xs: 'column', lg: 'row' }}
-        justifyContent='space-between'
-        alignItems='center'
-      >
+    <MKBox width='100%' position='absolute' zIndex={2} bottom='1.625rem' {...props}>
+      <Container>
         <MKBox
+          width='100%'
           display='flex'
-          justifyContent='center'
+          flexDirection={{ xs: 'column', lg: 'row' }}
+          justifyContent='space-between'
           alignItems='center'
-          flexWrap='wrap'
-          color={light ? 'white' : 'text'}
-          fontSize={size.sm}
         >
-          &copy; {new Date().getFullYear()}, made with
-          <MKBox fontSize={size.md} color={light ? 'white' : 'text'} mb={-0.5} mx={0.25}>
-            <Icon color='inherit' fontSize='inherit'>
-              favorite
-            </Icon>
+          <MKBox
+            display='flex'
+            justifyContent='center'
+            alignItems='center'
+            flexWrap='wrap'
+            color={light ? 'white' : 'text'}
+            fontSize={size.sm}
+          >
+            &copy; {new Date().getFullYear()}, made with
+            <MKBox fontSize={size.md} color={light ? 'white' : 'text'} mb={-0.5} mx={0.25}>
+              <Icon color='inherit' fontSize='inherit'>
+                favorite
+              </Icon>
+            </MKBox>
+            by
+            <Link href={href} target='_blank'>
+              <MKTypography variant='button' fontWeight='medium' color={light ? 'white' : 'dark'}>
+                &nbsp;{name}&nbsp;
+              </MKTypography>
+            </Link>
+            for a better web.
           </MKBox>
-          by
-          <Link href={href} target='_blank'>
-            <MKTypography variant='button' fontWeight='medium' color={light ? 'white' : 'dark'}>
-              &nbsp;{name}&nbsp;
-            </MKTypography>
-          </Link>
-          for a better web.
-        </MKBox>
-        <MKBox
-          component='ul'
-          sx={({ breakpoints }) => ({
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'center',
-            listStyle: 'none',
-            mt: 3,
-            mb: 0,
-            p: 0,
+          <MKBox
+            component='ul'
+            sx={({ breakpoints }) => ({
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              justifyContent: 'center',
+              listStyle: 'none',
+              mt: 3,
+              mb: 0,
+              p: 0,
 
-            [breakpoints.up('lg')]: {
-              mt: 0,
-            },
-          })}
-        >
-          {renderLinks()}
+              [breakpoints.up('lg')]: {
+                mt: 0,
+              },
+            })}
+          >
+            {renderLinks()}
+          </MKBox>
         </MKBox>
-      </MKBox>
-    </Container>
+      </Container>
+    </MKBox>
   );
 };
 

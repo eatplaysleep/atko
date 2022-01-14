@@ -26,11 +26,8 @@ import { Card, Grid, Link as MuiLink, Switch } from '@mui/material';
 // @mui icons
 import { Facebook, GitHub, Google } from '@mui/icons-material';
 
-import { MKBox, MKButton, MKTypography, Navbar, SimpleFooter } from 'components';
+import { MKBox, MKButton, MKTypography, PageLayout, SimpleFooter } from 'components';
 import MKInput from 'components/material-ui-kit/MKInput';
-
-// Material Kit 2 React page layout routes
-import { navbar as navbarRoutes } from 'routes';
 
 // Images
 import bgImage from 'assets/images/bg-sign-in-basic.jpeg';
@@ -41,25 +38,25 @@ export const SignInBasic = () => {
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
   return (
-    <>
-      <MKBox
-        position='absolute'
-        top={0}
-        left={0}
-        zIndex={1}
-        width='100%'
-        minHeight='100vh'
-        sx={{
-          backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
-            `${linearGradient(
-              rgba(gradients.dark.main, 0.6),
-              rgba(gradients.dark.state, 0.6)
-            )}, url(${bgImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
+    <PageLayout
+      position='absolute'
+      top={0}
+      left={0}
+      zIndex={1}
+      width='100%'
+      minHeight='100vh'
+      sx={{
+        backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
+          `${linearGradient(
+            rgba(gradients.dark.main, 0.6),
+            rgba(gradients.dark.state, 0.6)
+          )}, url(${bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+      footer={<SimpleFooter light />}
+    >
       <MKBox px={1} width='100%' height='100vh' mx='auto' position='relative' zIndex={2}>
         <Grid container spacing={1} justifyContent='center' alignItems='center' height='100%'>
           <Grid item xs={11} sm={9} md={5} lg={4} xl={3}>
@@ -142,9 +139,6 @@ export const SignInBasic = () => {
           </Grid>
         </Grid>
       </MKBox>
-      <MKBox width='100%' position='absolute' zIndex={2} bottom='1.625rem'>
-        <SimpleFooter light />
-      </MKBox>
-    </>
+    </PageLayout>
   );
 };
