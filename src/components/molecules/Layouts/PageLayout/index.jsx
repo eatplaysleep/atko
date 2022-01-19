@@ -11,6 +11,7 @@ import { Container } from '@mui/material';
 import { footer as footerRoutes } from 'routes';
 
 // Material Kit 2 React components
+import { MKBox } from 'components';
 import { PageHeader } from 'components/molecules/Layouts/PageHeader';
 import { PageFooter } from 'components/molecules/Layouts/PageFooter';
 
@@ -40,6 +41,7 @@ const PageLayoutRoot = ({ children, container, footer, header }) => {
   return (
     <>
       {showHeader && pageHeader}
+      {!showHeader && <MKBox minHeight='40vmin' />}
       {container && <Container>{c}</Container>}
       {!container && { c }}
       {showFooter && pageFooter}

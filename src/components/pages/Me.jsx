@@ -19,8 +19,7 @@
 import { PageLayout, ProfileCard } from 'components';
 
 export const Me = () => (
-  <PageLayout header>
-    {/* <PageLayout.Header /> */}
-    {/* <ProfileCard /> */}
+  <PageLayout>
+    <ProfileCard />
   </PageLayout>
 );
