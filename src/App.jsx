@@ -11,10 +11,12 @@ import theme from 'assets/theme';
 // import Presentation from '@/layouts/pages/presentation';
 
 // Material Kit 2 React routes
-import { footer as footerRoutes, navbar as navbarRoutes } from 'routes';
+import { navbar as routes } from 'routes';
 
-import { Footer, Home, Me, MKBox, Navbar, SignInBasic } from 'components';
+import { Home, Me, Navbar } from 'components';
 import 'styles/App.css';
+
+const navbarRoutes = routes;
 
 const App = () => {
   const { pathname } = useLocation();
@@ -40,7 +42,7 @@ const App = () => {
 
       return null;
     });
-
+  // TODO make navbar hide-able via AppState provider
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -55,9 +57,9 @@ const App = () => {
         sticky
       />
       <Routes>
-        {getRoutes(navbarRoutes)}
+        {getRoutes(routes)}
         <Route path='/' element={<Home />} />
-        <Route path='/signin' element={<SignInBasic />} />
+        {/* <Route path='/signin' element={<SignInBasic />} /> */}
         <Route path='/me' element={<Me />} />
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>

@@ -27,7 +27,7 @@ import { MKBox, MKTypography } from 'components';
 // Material Kit 2 React base styles
 import typography from 'assets/theme/base/typography';
 
-const SimpleFooterComponent = ({ company, links, light, ...props }) => {
+const SimpleFooterRoot = ({ company, links, light, ...props }) => {
   const { href, name } = company;
   const { size } = typography;
 
@@ -106,7 +106,7 @@ const SimpleFooterComponent = ({ company, links, light, ...props }) => {
 };
 
 // Setting default values for the props of SimpleFooter
-SimpleFooterComponent.defaultProps = {
+SimpleFooterRoot.defaultProps = {
   company: { href: 'https://www.creative-tim.com/', name: 'Creative Tim' },
   links: [
     { href: 'https://www.creative-tim.com/', name: 'Creative Tim' },
@@ -118,10 +118,10 @@ SimpleFooterComponent.defaultProps = {
 };
 
 // Typechecking props for the SimpleFooter
-SimpleFooterComponent.propTypes = {
+SimpleFooterRoot.propTypes = {
   company: PropTypes.objectOf(PropTypes.string),
   links: PropTypes.arrayOf(PropTypes.object),
   light: PropTypes.bool,
 };
 
-export const SimpleFooter = SimpleFooterComponent;
+export const SimpleFooter = SimpleFooterRoot;

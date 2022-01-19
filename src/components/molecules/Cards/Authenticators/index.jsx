@@ -24,7 +24,7 @@ import { Card, Divider } from '@mui/material';
 // Material Dashboard 2 React components
 import { MKBox, MKTypography } from 'components';
 
-function AuthenticatorsCardRoot({ title, description, data, shadow }) {
+const AuthenticatorsCardRoot = ({ title, description, data, shadow }) => {
   const labels = [];
   const values = [];
 
@@ -77,7 +77,7 @@ function AuthenticatorsCardRoot({ title, description, data, shadow }) {
       </MKBox>
     </Card>
   );
-}
+};
 
 // Setting default props for the ProfileInfoCard
 AuthenticatorsCardRoot.defaultProps = {

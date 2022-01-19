@@ -17,12 +17,10 @@
  */
 
 // @mui material components
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
+import { Card, Container, Grid } from '@mui/material';
 
 // Material Kit 2 React components
-import { MKBox, MKTypography, MKSocialButton } from 'components';
+import { MKBox, MKTypography, MKSocialButton, PageLayout } from 'components';
 
 // Material Kit 2 React examples
 // import FilledInfoCard from 'examples/Cards/InfoCards/FilledInfoCard';
@@ -43,6 +41,7 @@ import bgImage from 'assets/images/bg-presentation.jpg';
 
 export const Home = () => (
   <>
+    {/* <PageLayout.Header /> */}
     <MKBox
       minHeight='75vh'
       width='100%'

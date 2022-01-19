@@ -31,7 +31,7 @@ import { MKBox, MKTypography } from 'components';
 import colors from 'assets/theme/base/colors';
 import typography from 'assets/theme/base/typography';
 
-function ProfileInfoCardRoot({ title, description, info, social, action, shadow }) {
+const ProfileInfoCardRoot = ({ title, description, info, social, action, shadow }) => {
   const labels = [];
   const values = [];
   const { socialMediaColors } = colors;
@@ -115,7 +115,7 @@ function ProfileInfoCardRoot({ title, description, info, social, action, shadow 
       </MKBox>
     </Card>
   );
-}
+};
 
 // Setting default props for the ProfileInfoCard
 ProfileInfoCardRoot.defaultProps = {
