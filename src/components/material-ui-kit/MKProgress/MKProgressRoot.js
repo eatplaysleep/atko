@@ -17,7 +17,7 @@
 
 // @mui material components
 import { styled } from '@mui/material/styles';
-import LinearProgress from '@mui/material/LinearProgress';
+import { LinearProgress } from '@mui/material';
 
 export default styled(LinearProgress)(({ theme, ownerState }) => {
   const { palette, functions } = theme;

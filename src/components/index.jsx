@@ -1,5 +1,8 @@
 /** @format */
 
+// Feedback
+import Modal from './atoms/Feedback/Modal';
+
 // Cards
 import AuthenticatorsCard from './molecules/Cards/Authenticators';
 import ProfileCardHeader from './molecules/Cards/ProfileCardHeader';
@@ -18,9 +21,9 @@ import NavbarMobile from './molecules/NavbarMobile';
 import Navbar from './organisms/Navbar';
 import ProfileCard from './organisms/ProfileCard';
 
-// export * from './Headers';
 export {
   AuthenticatorsCard,
+  Modal,
   Navbar,
   NavbarDropdown,
   NavbarMobile,
@@ -33,3 +36,7 @@ export {
   PageLayout,
   SimpleFooter,
 };
+
+export * from './pages/Home';
+export * from './pages/Me';
+export * from './pages/SignIn';

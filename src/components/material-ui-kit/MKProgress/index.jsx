@@ -21,7 +21,7 @@ import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
 // Material Kit 2 React components
-import MKTypography from 'components/material-ui-kit/MKTypography';
+import MK from 'components/material-ui-kit';
 
 // Custom styles for MKProgress
 import MKProgressRoot from 'components/material-ui-kit/MKProgress/MKProgressRoot';
@@ -29,9 +29,9 @@ import MKProgressRoot from 'components/material-ui-kit/MKProgress/MKProgressRoot
 const MKProgress = forwardRef(({ variant, color, value, label, ...rest }, ref) => (
   <>
     {label && (
-      <MKTypography variant='button' fontWeight='medium' color='text'>
+      <MK.Typography variant='button' fontWeight='medium' color='text'>
         {value}%
-      </MKTypography>
+      </MK.Typography>
     )}
     <MKProgressRoot
       {...rest}

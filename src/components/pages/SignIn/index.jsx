@@ -26,8 +26,8 @@ import { Card, Grid, Link as MuiLink, Switch } from '@mui/material';
 // @mui icons
 import { Facebook, GitHub, Google } from '@mui/icons-material';
 
-import { MKBox, MKButton, MKTypography, PageLayout, SimpleFooter } from 'components';
-import MKInput from 'components/material-ui-kit/MKInput';
+import { PageLayout, SimpleFooter } from 'components';
+import MK from 'components/material-ui-kit';
 
 // Images
 import bgImage from 'assets/images/bg-sign-in-basic.jpeg';
@@ -58,11 +58,11 @@ export const SignInBasic = () => {
       footer={<SimpleFooter light />}
       navbar={false}
     >
-      <MKBox px={1} width='100%' height='100vh' mx='auto' position='relative' zIndex={2}>
+      <MK.Box px={1} width='100%' height='100vh' mx='auto' position='relative' zIndex={2}>
         <Grid container spacing={1} justifyContent='center' alignItems='center' height='100%'>
           <Grid item xs={11} sm={9} md={5} lg={4} xl={3}>
             <Card>
-              <MKBox
+              <MK.Box
                 variant='gradient'
                 bgColor='info'
                 borderRadius='lg'
@@ -73,38 +73,38 @@ export const SignInBasic = () => {
                 mb={1}
                 textAlign='center'
               >
-                <MKTypography variant='h4' fontWeight='medium' color='white' mt={1}>
+                <MK.Typography variant='h4' fontWeight='medium' color='white' mt={1}>
                   Sign in
-                </MKTypography>
+                </MK.Typography>
                 <Grid container spacing={3} justifyContent='center' sx={{ mt: 1, mb: 2 }}>
                   <Grid item xs={2}>
-                    <MKTypography component={MuiLink} href='#' variant='body1' color='white'>
+                    <MK.Typography component={MuiLink} href='#' variant='body1' color='white'>
                       <Facebook color='inherit' />
-                    </MKTypography>
+                    </MK.Typography>
                   </Grid>
                   <Grid item xs={2}>
-                    <MKTypography component={MuiLink} href='#' variant='body1' color='white'>
+                    <MK.Typography component={MuiLink} href='#' variant='body1' color='white'>
                       <GitHub color='inherit' />
-                    </MKTypography>
+                    </MK.Typography>
                   </Grid>
                   <Grid item xs={2}>
-                    <MKTypography component={MuiLink} href='#' variant='body1' color='white'>
+                    <MK.Typography component={MuiLink} href='#' variant='body1' color='white'>
                       <Google color='inherit' />
-                    </MKTypography>
+                    </MK.Typography>
                   </Grid>
                 </Grid>
-              </MKBox>
-              <MKBox pt={4} pb={3} px={3}>
-                <MKBox component='form' role='form'>
-                  <MKBox mb={2}>
-                    <MKInput type='email' label='Email' fullWidth />
-                  </MKBox>
-                  <MKBox mb={2}>
-                    <MKInput type='password' label='Password' fullWidth />
-                  </MKBox>
-                  <MKBox display='flex' alignItems='center' ml={-1}>
+              </MK.Box>
+              <MK.Box pt={4} pb={3} px={3}>
+                <MK.Box component='form' role='form'>
+                  <MK.Box mb={2}>
+                    <MK.Input type='email' label='Email' fullWidth />
+                  </MK.Box>
+                  <MK.Box mb={2}>
+                    <MK.Input type='password' label='Password' fullWidth />
+                  </MK.Box>
+                  <MK.Box display='flex' alignItems='center' ml={-1}>
                     <Switch checked={rememberMe} onChange={handleSetRememberMe} />
-                    <MKTypography
+                    <MK.Typography
                       variant='button'
                       fontWeight='regular'
                       color='text'
@@ -112,17 +112,17 @@ export const SignInBasic = () => {
                       sx={{ cursor: 'pointer', userSelect: 'none', ml: -1 }}
                     >
                       &nbsp;&nbsp;Remember me
-                    </MKTypography>
-                  </MKBox>
-                  <MKBox mt={4} mb={1}>
-                    <MKButton variant='gradient' color='info' fullWidth>
+                    </MK.Typography>
+                  </MK.Box>
+                  <MK.Box mt={4} mb={1}>
+                    <MK.Button variant='gradient' color='info' fullWidth>
                       sign in
-                    </MKButton>
-                  </MKBox>
-                  <MKBox mt={3} mb={1} textAlign='center'>
-                    <MKTypography variant='button' color='text'>
+                    </MK.Button>
+                  </MK.Box>
+                  <MK.Box mt={3} mb={1} textAlign='center'>
+                    <MK.Typography variant='button' color='text'>
                       Don&apos;t have an account?{' '}
-                      <MKTypography
+                      <MK.Typography
                         component={Link}
                         to='/authentication/sign-up/cover'
                         variant='button'
@@ -131,15 +131,15 @@ export const SignInBasic = () => {
                         textGradient
                       >
                         Sign up
-                      </MKTypography>
-                    </MKTypography>
-                  </MKBox>
-                </MKBox>
-              </MKBox>
+                      </MK.Typography>
+                    </MK.Typography>
+                  </MK.Box>
+                </MK.Box>
+              </MK.Box>
             </Card>
           </Grid>
         </Grid>
-      </MKBox>
+      </MK.Box>
     </PageLayout>
   );
 };

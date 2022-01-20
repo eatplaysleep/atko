@@ -16,7 +16,7 @@
  */
 
 // @mui material components
-import Badge from '@mui/material/Badge';
+import { Badge } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 export default styled(Badge)(({ theme, ownerState }) => {

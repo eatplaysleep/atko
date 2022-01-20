@@ -21,7 +21,7 @@ import { forwardRef, createContext, useContext } from 'react';
 import PropTypes from 'prop-types';
 
 // Material Kit 2 React components
-import { MKBox } from 'components/material-ui-kit';
+import MK from 'components/material-ui-kit';
 
 // Custom styles for MKPagination
 import MKPaginationItemRoot from 'components/material-ui-kit/MKPagination/MKPaginationItemRoot';
@@ -42,6 +42,7 @@ const MKPagination = forwardRef(
     }
 
     return (
+      /* eslint-disable-next-line react/jsx-no-constructed-context-values */
       <Context.Provider value={{ variant, color, size }}>
         {item ? (
           <MKPaginationItemRoot
@@ -56,14 +57,14 @@ const MKPagination = forwardRef(
             {children}
           </MKPaginationItemRoot>
         ) : (
-          <MKBox
+          <MK.Box
             display='flex'
             justifyContent={placementValue}
             alignItems='center'
             sx={{ listStyle: 'none' }}
           >
             {children}
-          </MKBox>
+          </MK.Box>
         )}
       </Context.Provider>
     );

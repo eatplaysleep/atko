@@ -24,13 +24,13 @@ import PropTypes from 'prop-types';
 import Fade from '@mui/material/Fade';
 
 // Material Kit 2 React components
-import { MKBox } from 'components/material-ui-kit/MKBox';
+import MK from 'components/material-ui-kit';
 
 // Custom styles for the MKAlert
 import MKAlertRoot from 'components/material-ui-kit/MKAlert/MKAlertRoot';
 import MKAlertCloseIcon from 'components/material-ui-kit/MKAlert/MKAlertCloseIcon';
 
-function MKAlert({ color, dismissible, children, ...rest }) {
+const MKAlert = ({ color, dismissible, children, ...rest }) => {
   const [alertStatus, setAlertStatus] = useState('mount');
 
   const handleAlertStatus = () => setAlertStatus('fadeOut');
@@ -39,7 +39,7 @@ function MKAlert({ color, dismissible, children, ...rest }) {
   const alertTemplate = (mount = true) => (
     <Fade in={mount} timeout={300}>
       <MKAlertRoot ownerState={{ color }} {...rest}>
-        <MKBox
+        <MK.Box
           display='flex'
           alignItems='center'
           fontSize='1rem'
@@ -47,7 +47,7 @@ function MKAlert({ color, dismissible, children, ...rest }) {
           color={color === 'light' ? 'dark' : 'white'}
         >
           {children}
-        </MKBox>
+        </MK.Box>
         {dismissible ? (
           <MKAlertCloseIcon onClick={mount ? handleAlertStatus : null}>&times;</MKAlertCloseIcon>
         ) : null}
@@ -67,7 +67,7 @@ function MKAlert({ color, dismissible, children, ...rest }) {
   }
 
   return null;
-}
+};
 
 // Setting default values for the props of MKAlert
 MKAlert.defaultProps = {

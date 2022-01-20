@@ -16,7 +16,7 @@
  */
 
 // @mui material components
-import Box from '@mui/material/Box';
+import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 export default styled(Box)(({ theme, ownerState }) => {

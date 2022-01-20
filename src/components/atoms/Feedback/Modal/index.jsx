@@ -12,9 +12,9 @@ import { Divider, MuiModal } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
 // Material Kit 2 React components
-import { MKBox, MKButton, MKTypography } from 'components';
+import MK from 'components/material-ui-kit';
 
-const SimpleModal = ({
+const Modal = ({
   actions,
   bgColor,
   children,
@@ -39,44 +39,44 @@ const SimpleModal = ({
 
   const contentNode =
     typeof content === 'string' ? (
-      <MKTypography variant='body2' color='secondary' fontWeight='regular'>
+      <MK.Typography variant='body2' color='secondary' fontWeight='regular'>
         {content}
-      </MKTypography>
+      </MK.Typography>
     ) : (
       content
     );
   const primaryAction =
     typeof primary === 'string' ? (
-      <MKButton variant='gradient' color='info'>
+      <MK.Button variant='gradient' color='info'>
         {primary}
-      </MKButton>
+      </MK.Button>
     ) : (
       primary
     );
   const secondaryAction =
     typeof secondary === 'string' ? (
-      <MKButton variant='gradient' color='light'>
+      <MK.Button variant='gradient' color='light'>
         {secondary}
-      </MKButton>
+      </MK.Button>
     ) : (
       secondary
     );
   const titleNode =
-    typeof title === 'string' ? <MKTypography variant='h5'>{title}</MKTypography> : title;
+    typeof title === 'string' ? <MK.Typography variant='h5'>{title}</MK.Typography> : title;
 
   return (
     <>
-      <MKBox>
-        <MKButton variant='gradient' color='info' onClick={onClick ?? toggleModal}>
+      <MK.Box>
+        <MK.Button variant='gradient' color='info' onClick={onClick ?? toggleModal}>
           {label}
-        </MKButton>
-      </MKBox>
+        </MK.Button>
+      </MK.Box>
       <MuiModal
         open={isVisible}
         onClose={handleClose}
         sx={{ display: 'grid', placeItems: 'center' }}
       >
-        <MKBox
+        <MK.Box
           position='relative'
           width='500px'
           display='flex'
@@ -86,33 +86,33 @@ const SimpleModal = ({
           shadow='xl'
           {...props}
         >
-          <MKBox display='flex' alginItems='center' justifyContent='space-between' p={2}>
+          <MK.Box display='flex' alginItems='center' justifyContent='space-between' p={2}>
             {titleNode}
             <CloseIcon fontSize='medium' sx={{ cursor: 'pointer' }} onClick={handleClose} />
-          </MKBox>
+          </MK.Box>
           <Divider sx={{ my: 0 }} />
-          <MKBox p={2}>
+          <MK.Box p={2}>
             {contentNode}
             {children}
-          </MKBox>
+          </MK.Box>
           <Divider sx={{ my: 0 }} />
-          <MKBox display='flex' justifyContent='flex-end' p={1.5}>
-            <MKBox display='flex' justifyContent='space-between' p={1.5} width='60%'>
+          <MK.Box display='flex' justifyContent='flex-end' p={1.5}>
+            <MK.Box display='flex' justifyContent='space-between' p={1.5} width='60%'>
               {secondaryAction}
               {primaryAction}
-            </MKBox>
-          </MKBox>
-        </MKBox>
+            </MK.Box>
+          </MK.Box>
+        </MK.Box>
       </MuiModal>
     </>
   );
 };
 
-SimpleModal.defaultProps = {
+Modal.defaultProps = {
   bgColor: 'white',
 };
 
-SimpleModal.propTypes = {
+Modal.propTypes = {
   actions: PropTypes.node,
   bgColor: PropTypes.string,
   children: PropTypes.node,
@@ -125,4 +125,4 @@ SimpleModal.propTypes = {
   title: PropTypes.oneOf([PropTypes.string, PropTypes.node]),
 };
 
-export const Modal = SimpleModal;
+export default Modal;
