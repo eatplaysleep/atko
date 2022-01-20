@@ -41,7 +41,17 @@ import bgImage from 'assets/images/bg-presentation.jpg';
 
 export const Home = () => (
   <>
-    {/* <PageLayout.Header /> */}
+    {/* <PageLayout.Header
+      minHeight='75vh'
+      width='100%'
+      sx={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'top',
+        display: 'grid',
+        placeItems: 'center',
+      }}
+    > */}
     <MKBox
       minHeight='75vh'
       width='100%'

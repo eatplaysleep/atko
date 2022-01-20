@@ -6,6 +6,9 @@ env:
 extends:
   - plugin:react/recommended
   - airbnb
+  - plugin:react/jsx-runtime
+  - plugin:prettier/recommended
+  - prettier/prettier
   - prettier
 parserOptions:
   ecmaFeatures:
@@ -16,28 +19,24 @@ plugins:
   - react
   - prettier
 rules:
-  no-unused-vars: warn
-  prettier/prettier:
-    - error
-    - endOfLine: auto
-      jsxSingleQuote: true
-  react/react-in-jsx-scope: 'off'
-  react/jsx-filename-extension:
-    - 1
-    - extensions:
-        - '.js'
-        - '.jsx'
-  react/jsx-props-no-spreading:
-    - 1
-    - custom: ignore
-  react/no-unused-prop-types: warn
-  react/require-default-props: 'off'
   import/prefer-default-export: 'off'
-  import/no-cycle: 'off'
-  react/jsx-curly-spacing:
-    - 2
-    - never
   react/function-component-definition: 'off'
+  react/jsx-props-no-spreading: 'off'
+  #   - custom: ignore
+  react/require-default-props: 'off'
+no-unused-vars: warn
+# prettier/prettier:
+#   - error
+#   - endOfLine: auto
+#     jsxSingleQuote: true
+# react/react-in-jsx-scope: 'off'
+# react/jsx-filename-extension:
+#   - 1
+#   - extensions:
+#       - '.js'
+#       - '.jsx'
+# react/no-unused-prop-types: warn
+# import/no-cycle: 'off'
 settings:
   import/resolver:
     node:
