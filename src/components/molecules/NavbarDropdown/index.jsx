@@ -22,13 +22,12 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 // @mui material components
-import Collapse from '@mui/material/Collapse';
-import Icon from '@mui/material/Icon';
+import { Collapse, Icon } from '@mui/material';
 
 // Material Kit 2 React components
-import { MKBox, MKTypography } from 'components';
+import MK from 'components/material-ui-kit';
 
-const DefaultNavbarDropdown = ({
+const NavbarDropdown = ({
   name,
   icon,
   children,
@@ -53,7 +52,7 @@ const DefaultNavbarDropdown = ({
 
   return (
     <>
-      <MKBox
+      <MK.Box
         {...rest}
         mx={1}
         p={1}
@@ -65,15 +64,15 @@ const DefaultNavbarDropdown = ({
         {...(route && routeComponent)}
         {...(href && linkComponent)}
       >
-        <MKTypography
+        <MK.Typography
           variant='body2'
           lineHeight={1}
           color='inherit'
           sx={{ alignSelf: 'center', '& *': { verticalAlign: 'middle' } }}
         >
           {icon}
-        </MKTypography>
-        <MKTypography
+        </MK.Typography>
+        <MK.Typography
           variant='button'
           fontWeight='regular'
           textTransform='capitalize'
@@ -81,13 +80,13 @@ const DefaultNavbarDropdown = ({
           sx={{ fontWeight: '100%', ml: 1, mr: 0.25 }}
         >
           {name}
-        </MKTypography>
-        <MKTypography variant='body2' color={light ? 'white' : 'dark'} ml='auto'>
+        </MK.Typography>
+        <MK.Typography variant='body2' color={light ? 'white' : 'dark'} ml='auto'>
           <Icon sx={{ fontWeight: 'normal', verticalAlign: 'middle' }}>
             {collapse && 'keyboard_arrow_down'}
           </Icon>
-        </MKTypography>
-      </MKBox>
+        </MK.Typography>
+      </MK.Box>
       {children && (
         <Collapse in={Boolean(collapseStatus)} timeout={400} unmountOnExit>
           {children}
@@ -98,7 +97,7 @@ const DefaultNavbarDropdown = ({
 };
 
 // Setting default values for the props of DefaultNavbarDropdown
-DefaultNavbarDropdown.defaultProps = {
+NavbarDropdown.defaultProps = {
   children: false,
   collapseStatus: false,
   light: false,
@@ -107,7 +106,7 @@ DefaultNavbarDropdown.defaultProps = {
 };
 
 // Typechecking props for the DefaultNavbarDropdown
-DefaultNavbarDropdown.propTypes = {
+NavbarDropdown.propTypes = {
   name: PropTypes.string.isRequired,
   icon: PropTypes.node.isRequired,
   children: PropTypes.node,
@@ -118,4 +117,4 @@ DefaultNavbarDropdown.propTypes = {
   collapse: PropTypes.bool.isRequired,
 };
 
-export const NavbarDropdown = DefaultNavbarDropdown;
+export default NavbarDropdown;

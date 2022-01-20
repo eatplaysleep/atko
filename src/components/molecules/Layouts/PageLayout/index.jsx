@@ -11,11 +11,11 @@ import { Container } from '@mui/material';
 import { footer as footerRoutes } from 'routes';
 
 // Material Kit 2 React components
-import { MKBox } from 'components';
-import { PageHeader } from 'components/molecules/Layouts/PageHeader';
-import { PageFooter } from 'components/molecules/Layouts/PageFooter';
+import MK from 'components/material-ui-kit';
+import PageHeader from 'components/molecules/Layouts/PageHeader';
+import PageFooter from 'components/molecules/Layouts/PageFooter';
 
-const PageLayoutRoot = ({ children, container, footer, header }) => {
+const PageLayout = ({ children, container, footer, header }) => {
   let pageHeader = <PageHeader />;
   let pageFooter = <PageFooter content={footerRoutes} />;
   let showHeader = header;
@@ -41,7 +41,7 @@ const PageLayoutRoot = ({ children, container, footer, header }) => {
   return (
     <>
       {showHeader && pageHeader}
-      {!showHeader && <MKBox minHeight='40vmin' />}
+      {!showHeader && <MK.Box minHeight='40vmin' />}
       {container && <Container>{c}</Container>}
       {!container && { c }}
       {showFooter && pageFooter}
@@ -49,20 +49,20 @@ const PageLayoutRoot = ({ children, container, footer, header }) => {
   );
 };
 
-PageLayoutRoot.Header = PageHeader;
-PageLayoutRoot.Footer = PageFooter;
+PageLayout.Header = PageHeader;
+PageLayout.Footer = PageFooter;
 
-PageLayoutRoot.defaultProps = {
+PageLayout.defaultProps = {
   container: true,
   footer: true,
   header: false,
 };
 
-PageLayoutRoot.propTypes = {
+PageLayout.propTypes = {
   children: PropTypes.node,
   container: PropTypes.bool,
   footer: PropTypes.bool,
   header: PropTypes.bool,
 };
 
-export const PageLayout = PageLayoutRoot;
+export default PageLayout;

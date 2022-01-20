@@ -24,7 +24,7 @@ import PropTypes from 'prop-types';
 import { AppBar, Grid, Icon, Tab, Tabs } from '@mui/material';
 
 // Material Dashboard 2 React components
-import { MKAvatar, MKBox, MKTypography } from 'components';
+import MK from 'components/material-ui-kit';
 
 // Material Dashboard 2 PRO React base styles
 import breakpoints from 'assets/theme/base/breakpoints';
@@ -32,7 +32,7 @@ import breakpoints from 'assets/theme/base/breakpoints';
 // Images
 import burceMars from 'assets/images/bruce-mars.jpg';
 
-const ProfileCardHeaderRoot = ({ children }) => {
+const ProfileCardHeader = ({ children }) => {
   const [tabsOrientation, setTabsOrientation] = useState('horizontal');
   const [tabValue, setTabValue] = useState(0);
 
@@ -58,20 +58,20 @@ const ProfileCardHeaderRoot = ({ children }) => {
   const handleSetTabValue = (event, newValue) => setTabValue(newValue);
 
   return (
-    <MKBox position='relative' mb={5}>
+    <MK.Box position='relative' mb={5}>
       <Grid container spacing={3} alignItems='center'>
         <Grid item>
-          <MKAvatar src={burceMars} alt='profile-image' size='xl' shadow='sm' />
+          <MK.Avatar src={burceMars} alt='profile-image' size='xl' shadow='sm' />
         </Grid>
         <Grid item>
-          <MKBox height='100%' mt={0.5} lineHeight={1}>
-            <MKTypography variant='h5' fontWeight='medium'>
+          <MK.Box height='100%' mt={0.5} lineHeight={1}>
+            <MK.Typography variant='h5' fontWeight='medium'>
               Richard Davis
-            </MKTypography>
-            <MKTypography variant='button' color='text' fontWeight='regular'>
+            </MK.Typography>
+            <MK.Typography variant='button' color='text' fontWeight='regular'>
               CEO / Co-Founder
-            </MKTypography>
-          </MKBox>
+            </MK.Typography>
+          </MK.Box>
         </Grid>
         <Grid item xs={12} md={6} lg={4} sx={{ ml: 'auto' }}>
           <AppBar position='static'>
@@ -105,18 +105,18 @@ const ProfileCardHeaderRoot = ({ children }) => {
         </Grid>
       </Grid>
       {children}
-    </MKBox>
+    </MK.Box>
   );
 };
 
 // Setting default props for the Header
-ProfileCardHeaderRoot.defaultProps = {
+ProfileCardHeader.defaultProps = {
   children: '',
 };
 
 // Typechecking props for the Header
-ProfileCardHeaderRoot.propTypes = {
+ProfileCardHeader.propTypes = {
   children: PropTypes.node,
 };
 
-export const ProfileCardHeader = ProfileCardHeaderRoot;
+export default ProfileCardHeader;

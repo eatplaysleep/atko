@@ -35,12 +35,13 @@ import {
   Popper,
 } from '@mui/material';
 
-import { MKBox, MKButton, MKTypography, NavbarDropdown, NavbarMobile } from 'components';
+import MK from 'components/material-ui-kit';
+import { NavbarDropdown, NavbarMobile } from 'components';
 
 // Material Kit 2 React base styles
 import breakpoints from 'assets/theme/base/breakpoints';
 
-const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, relative, center }) => {
+const Navbar = ({ brand, routes, transparent, light, action, sticky, relative, center }) => {
   const [dropdown, setDropdown] = useState('');
   const [dropdownEl, setDropdownEl] = useState('');
   const [dropdownName, setDropdownName] = useState('');
@@ -127,7 +128,7 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
               <Grid key={gridKey} item xs={12 / columns} sx={{ position: 'relative' }}>
                 {cols.map((col, index) => (
                   <Fragment key={col.name}>
-                    <MKTypography
+                    <MK.Typography
                       display='block'
                       variant='button'
                       fontWeight='bold'
@@ -137,9 +138,9 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
                       mt={index !== 0 ? 2 : 0}
                     >
                       {col.name}
-                    </MKTypography>
+                    </MK.Typography>
                     {col.collapse.map((item) => (
-                      <MKTypography
+                      <MK.Typography
                         key={item.name}
                         component={item.route ? Link : MuiLink}
                         to={item.route ? item.route : ''}
@@ -166,7 +167,7 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
                         })}
                       >
                         {item.name}
-                      </MKTypography>
+                      </MK.Typography>
                     ))}
                   </Fragment>
                 ))}
@@ -205,7 +206,7 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
         };
 
         return (
-          <MKTypography
+          <MK.Typography
             key={item.name}
             {...(item.route ? routeComponent : linkComponent)}
             display='flex'
@@ -246,9 +247,9 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
             }}
           >
             {item.description ? (
-              <MKBox>
+              <MK.Box>
                 {item.name}
-                <MKTypography
+                <MK.Typography
                   display='block'
                   variant='button'
                   color='text'
@@ -256,8 +257,8 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
                   sx={{ transition: 'all 300ms linear' }}
                 >
                   {item.description}
-                </MKTypography>
-              </MKBox>
+                </MK.Typography>
+              </MK.Box>
             ) : (
               item.name
             )}
@@ -269,7 +270,7 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
                 keyboard_arrow_right
               </Icon>
             )}
-          </MKTypography>
+          </MK.Typography>
         );
       });
     }
@@ -311,16 +312,16 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
             background: ({ palette: { white } }) => white.main,
           }}
         >
-          <MKBox borderRadius='lg'>
-            <MKTypography variant='h1' color='white'>
+          <MK.Box borderRadius='lg'>
+            <MK.Typography variant='h1' color='white'>
               <Icon ref={setArrowRef} sx={{ mt: -3 }}>
                 arrow_drop_up
               </Icon>
-            </MKTypography>
-            <MKBox shadow='lg' borderRadius='lg' p={2} mt={2}>
+            </MK.Typography>
+            <MK.Box shadow='lg' borderRadius='lg' p={2} mt={2}>
               {renderRoutes}
-            </MKBox>
-          </MKBox>
+            </MK.Box>
+          </MK.Box>
         </Grow>
       )}
     </Popper>
@@ -349,7 +350,7 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
                 };
 
                 return (
-                  <MKTypography
+                  <MK.Typography
                     key={item.name}
                     {...(item.route ? routeComponent : linkComponent)}
                     display='flex'
@@ -378,9 +379,9 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
                     })}
                   >
                     {item.description ? (
-                      <MKBox>
+                      <MK.Box>
                         {item.name}
-                        <MKTypography
+                        <MK.Typography
                           display='block'
                           variant='button'
                           color='text'
@@ -388,8 +389,8 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
                           sx={{ transition: 'all 300ms linear' }}
                         >
                           {item.description}
-                        </MKTypography>
-                      </MKBox>
+                        </MK.Typography>
+                      </MK.Box>
                     ) : (
                       item.name
                     )}
@@ -401,7 +402,7 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
                         keyboard_arrow_right
                       </Icon>
                     )}
-                  </MKTypography>
+                  </MK.Typography>
                 );
               });
           }
@@ -437,11 +438,11 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
             background: ({ palette: { white } }) => white.main,
           }}
         >
-          <MKBox ml={2.5} mt={-2.5} borderRadius='lg'>
-            <MKBox shadow='lg' borderRadius='lg' py={1.5} px={1} mt={2}>
+          <MK.Box ml={2.5} mt={-2.5} borderRadius='lg'>
+            <MK.Box shadow='lg' borderRadius='lg' py={1.5} px={1} mt={2}>
               {renderNestedRoutes}
-            </MKBox>
-          </MKBox>
+            </MK.Box>
+          </MK.Box>
         </Grow>
       )}
     </Popper>
@@ -449,7 +450,7 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
 
   return (
     <Container sx={sticky ? { position: 'sticky', top: 0, zIndex: 10 } : null}>
-      <MKBox
+      <MK.Box
         py={1}
         px={{ xs: 4, sm: transparent ? 2 : 3, lg: transparent ? 0 : 2 }}
         my={relative ? 0 : 2}
@@ -466,30 +467,31 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
           backdropFilter: transparent ? 'none' : `saturate(200%) blur(30px)`,
         })}
       >
-        <MKBox display='flex' justifyContent='space-between' alignItems='center'>
-          <MKBox
+        <MK.Box display='flex' justifyContent='space-between' alignItems='center'>
+          <MK.Box
             component={Link}
             to='/'
             lineHeight={1}
             py={transparent ? 1.5 : 0.75}
             pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
           >
-            <MKTypography variant='button' fontWeight='bold' color={light ? 'white' : 'dark'}>
+            <MK.Typography variant='button' fontWeight='bold' color={light ? 'white' : 'dark'}>
               {brand}
-            </MKTypography>
-          </MKBox>
-          <MKBox
+            </MK.Typography>
+          </MK.Box>
+          <MK.Box
             color='inherit'
             display={{ xs: 'none', lg: 'flex' }}
             ml='auto'
             mr={center ? 'auto' : 0}
           >
             {renderNavbarItems}
-          </MKBox>
-          <MKBox ml={{ xs: 'auto', lg: 0 }}>
+          </MK.Box>
+          <Modal label='Test Modal' />
+          <MK.Box ml={{ xs: 'auto', lg: 0 }}>
             {action &&
               (action.type === 'internal' ? (
-                <MKButton
+                <MK.Button
                   component={Link}
                   to={action.route}
                   variant={
@@ -501,9 +503,9 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
                   size='small'
                 >
                   {action.label}
-                </MKButton>
+                </MK.Button>
               ) : (
-                <MKButton
+                <MK.Button
                   component='a'
                   href={action.route}
                   target='_blank'
@@ -517,10 +519,10 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
                   size='small'
                 >
                   {action.label}
-                </MKButton>
+                </MK.Button>
               ))}
-          </MKBox>
-          <MKBox
+          </MK.Box>
+          <MK.Box
             display={{ xs: 'inline-block', lg: 'none' }}
             lineHeight={0}
             py={1.5}
@@ -530,17 +532,17 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
             onClick={openMobileNavbar}
           >
             <Icon fontSize='default'>{mobileNavbar ? 'close' : 'menu'}</Icon>
-          </MKBox>
-        </MKBox>
-        <MKBox
+          </MK.Box>
+        </MK.Box>
+        <MK.Box
           bgColor={transparent ? 'white' : 'transparent'}
           shadow={transparent ? 'lg' : 'none'}
           borderRadius='xl'
           px={transparent ? 2 : 0}
         >
           {mobileView && <NavbarMobile routes={routes} open={mobileNavbar} />}
-        </MKBox>
-      </MKBox>
+        </MK.Box>
+      </MK.Box>
       {dropdownMenu}
       {nestedDropdownMenu}
     </Container>
@@ -548,7 +550,7 @@ const DefaultNavbar = ({ brand, routes, transparent, light, action, sticky, rela
 };
 
 // Setting default values for the props of DefaultNavbar
-DefaultNavbar.defaultProps = {
+Navbar.defaultProps = {
   brand: 'Material Kit 2',
   transparent: false,
   light: false,
@@ -559,7 +561,7 @@ DefaultNavbar.defaultProps = {
 };
 
 // Typechecking props for the DefaultNavbar
-DefaultNavbar.propTypes = {
+Navbar.propTypes = {
   brand: PropTypes.string,
   routes: PropTypes.arrayOf(PropTypes.object).isRequired,
   transparent: PropTypes.bool,
@@ -589,4 +591,4 @@ DefaultNavbar.propTypes = {
   center: PropTypes.bool,
 };
 
-export const Navbar = DefaultNavbar;
+export default Navbar;

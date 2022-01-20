@@ -26,20 +26,20 @@ import PropTypes from 'prop-types';
 import { Container, Grid } from '@mui/material';
 
 // Material Kit 2 React components
-import { MKBox, MKTypography } from 'components';
+import MK from 'components/material-ui-kit';
 
-const PageFooterRoot = ({ content, ...props }) => {
+const PageFooter = ({ content, ...props }) => {
   const { brand, socials, menus, copyright } = content || {};
   return (
-    <MKBox pt={6} px={1} mt={6} {...props}>
-      <MKBox component='footer'>
+    <MK.Box pt={6} px={1} mt={6} {...props}>
+      <MK.Box component='footer'>
         <Container>
           {content && (
             <Grid container spacing={3}>
               <Grid item xs={12} md={3} sx={{ ml: 'auto', mb: 3 }}>
-                <MKBox>
+                <MK.Box>
                   <Link to={brand?.route}>
-                    <MKBox
+                    <MK.Box
                       component='img'
                       src={brand?.image}
                       alt={brand?.name}
@@ -47,12 +47,12 @@ const PageFooterRoot = ({ content, ...props }) => {
                       mb={2}
                     />
                   </Link>
-                  <MKTypography variant='h6'>{brand?.name}</MKTypography>
-                </MKBox>
-                <MKBox display='flex' alignItems='center' mt={3}>
+                  <MK.Typography variant='h6'>{brand?.name}</MK.Typography>
+                </MK.Box>
+                <MK.Box display='flex' alignItems='center' mt={3}>
                   {socials &&
                     socials.map(({ icon, link }, key) => (
-                      <MKTypography
+                      <MK.Typography
                         key={link}
                         component='a'
                         href={link}
@@ -64,14 +64,14 @@ const PageFooterRoot = ({ content, ...props }) => {
                         mr={key === socials.length - 1 ? 0 : 2.5}
                       >
                         {icon}
-                      </MKTypography>
+                      </MK.Typography>
                     ))}
-                </MKBox>
+                </MK.Box>
               </Grid>
               {menus &&
                 menus.map(({ name: title, items }) => (
                   <Grid key={title} item xs={6} md={2} sx={{ mb: 3 }}>
-                    <MKTypography
+                    <MK.Typography
                       display='block'
                       variant='button'
                       fontWeight='bold'
@@ -79,12 +79,12 @@ const PageFooterRoot = ({ content, ...props }) => {
                       mb={1}
                     >
                       {title}
-                    </MKTypography>
-                    <MKBox component='ul' p={0} m={0} sx={{ listStyle: 'none' }}>
+                    </MK.Typography>
+                    <MK.Box component='ul' p={0} m={0} sx={{ listStyle: 'none' }}>
                       {items.map(({ name, route, href }) => (
-                        <MKBox key={name} component='li' p={0} m={0} lineHeight={1.25}>
+                        <MK.Box key={name} component='li' p={0} m={0} lineHeight={1.25}>
                           {href ? (
-                            <MKTypography
+                            <MK.Typography
                               component='a'
                               href={href}
                               target='_blank'
@@ -94,9 +94,9 @@ const PageFooterRoot = ({ content, ...props }) => {
                               textTransform='capitalize'
                             >
                               {name}
-                            </MKTypography>
+                            </MK.Typography>
                           ) : (
-                            <MKTypography
+                            <MK.Typography
                               component={Link}
                               to={route}
                               variant='button'
@@ -104,11 +104,11 @@ const PageFooterRoot = ({ content, ...props }) => {
                               textTransform='capitalize'
                             >
                               {name}
-                            </MKTypography>
+                            </MK.Typography>
                           )}
-                        </MKBox>
+                        </MK.Box>
                       ))}
-                    </MKBox>
+                    </MK.Box>
                   </Grid>
                 ))}
               <Grid item xs={12} sx={{ textAlign: 'center', my: 3 }}>
@@ -117,14 +117,14 @@ const PageFooterRoot = ({ content, ...props }) => {
             </Grid>
           )}
         </Container>
-      </MKBox>
-    </MKBox>
+      </MK.Box>
+    </MK.Box>
   );
 };
 
 // Typechecking props for the DefaultFooter
-PageFooterRoot.propTypes = {
+PageFooter.propTypes = {
   content: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.object, PropTypes.array])),
 };
 
-export const PageFooter = PageFooterRoot;
+export default PageFooter;

@@ -23,19 +23,19 @@ import PropTypes from 'prop-types';
 // Custom styles for MKAvatar
 import MKAvatarRoot from 'components/material-ui-kit/MKAvatar/MKAvatarRoot';
 
-const MKAvatarComponent = forwardRef(({ bgColor, size, shadow, ...rest }, ref) => (
+const MKAvatar = forwardRef(({ bgColor, size, shadow, ...rest }, ref) => (
   <MKAvatarRoot ref={ref} ownerState={{ shadow, bgColor, size }} {...rest} />
 ));
 
 // Setting default values for the props of MKAvatar
-MKAvatarComponent.defaultProps = {
+MKAvatar.defaultProps = {
   bgColor: 'transparent',
   size: 'md',
   shadow: 'none',
 };
 
 // Typechecking props for the MKAvatar
-MKAvatarComponent.propTypes = {
+MKAvatar.propTypes = {
   bgColor: PropTypes.oneOf([
     'transparent',
     'primary',
@@ -51,4 +51,4 @@ MKAvatarComponent.propTypes = {
   shadow: PropTypes.oneOf(['none', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'inset']),
 };
 
-export const MKAvatar = MKAvatarComponent;
+export default MKAvatar;

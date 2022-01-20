@@ -22,18 +22,18 @@ import PropTypes from 'prop-types';
 import { Container, Icon, Link } from '@mui/material';
 
 // Material Kit 2 React components
-import { MKBox, MKTypography } from 'components';
+import MK from 'components/material-ui-kit';
 
 // Material Kit 2 React base styles
 import typography from 'assets/theme/base/typography';
 
-const SimpleFooterRoot = ({ company, links, light, ...props }) => {
+const SimpleFooter = ({ company, links, light, ...props }) => {
   const { href, name } = company;
   const { size } = typography;
 
   const renderLinks = () =>
     links.map((link, key) => (
-      <MKBox
+      <MK.Box
         key={link.name}
         component='li'
         pl={key === 0 ? 0 : 2}
@@ -41,24 +41,24 @@ const SimpleFooterRoot = ({ company, links, light, ...props }) => {
         lineHeight={1}
       >
         <Link href={link.href} target='_blank'>
-          <MKTypography variant='button' fontWeight='regular' color={light ? 'white' : 'text'}>
+          <MK.Typography variant='button' fontWeight='regular' color={light ? 'white' : 'text'}>
             {link.name}
-          </MKTypography>
+          </MK.Typography>
         </Link>
-      </MKBox>
+      </MK.Box>
     ));
 
   return (
-    <MKBox width='100%' position='absolute' zIndex={2} bottom='1.625rem' {...props}>
+    <MK.Box width='100%' position='absolute' zIndex={2} bottom='1.625rem' {...props}>
       <Container>
-        <MKBox
+        <MK.Box
           width='100%'
           display='flex'
           flexDirection={{ xs: 'column', lg: 'row' }}
           justifyContent='space-between'
           alignItems='center'
         >
-          <MKBox
+          <MK.Box
             display='flex'
             justifyContent='center'
             alignItems='center'
@@ -67,20 +67,20 @@ const SimpleFooterRoot = ({ company, links, light, ...props }) => {
             fontSize={size.sm}
           >
             &copy; {new Date().getFullYear()}, made with
-            <MKBox fontSize={size.md} color={light ? 'white' : 'text'} mb={-0.5} mx={0.25}>
+            <MK.Box fontSize={size.md} color={light ? 'white' : 'text'} mb={-0.5} mx={0.25}>
               <Icon color='inherit' fontSize='inherit'>
                 favorite
               </Icon>
-            </MKBox>
+            </MK.Box>
             by
             <Link href={href} target='_blank'>
-              <MKTypography variant='button' fontWeight='medium' color={light ? 'white' : 'dark'}>
+              <MK.Typography variant='button' fontWeight='medium' color={light ? 'white' : 'dark'}>
                 &nbsp;{name}&nbsp;
-              </MKTypography>
+              </MK.Typography>
             </Link>
             for a better web.
-          </MKBox>
-          <MKBox
+          </MK.Box>
+          <MK.Box
             component='ul'
             sx={({ breakpoints }) => ({
               display: 'flex',
@@ -98,15 +98,15 @@ const SimpleFooterRoot = ({ company, links, light, ...props }) => {
             })}
           >
             {renderLinks()}
-          </MKBox>
-        </MKBox>
+          </MK.Box>
+        </MK.Box>
       </Container>
-    </MKBox>
+    </MK.Box>
   );
 };
 
 // Setting default values for the props of SimpleFooter
-SimpleFooterRoot.defaultProps = {
+SimpleFooter.defaultProps = {
   company: { href: 'https://www.creative-tim.com/', name: 'Creative Tim' },
   links: [
     { href: 'https://www.creative-tim.com/', name: 'Creative Tim' },
@@ -118,10 +118,10 @@ SimpleFooterRoot.defaultProps = {
 };
 
 // Typechecking props for the SimpleFooter
-SimpleFooterRoot.propTypes = {
+SimpleFooter.propTypes = {
   company: PropTypes.objectOf(PropTypes.string),
   links: PropTypes.arrayOf(PropTypes.object),
   light: PropTypes.bool,
 };
 
-export const SimpleFooter = SimpleFooterRoot;
+export default SimpleFooter;

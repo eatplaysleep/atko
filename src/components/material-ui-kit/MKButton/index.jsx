@@ -23,7 +23,7 @@ import PropTypes from 'prop-types';
 // Custom styles for MKButton
 import MKButtonRoot from 'components/material-ui-kit/MKButton/MKButtonRoot';
 
-const MKButtonComponent = forwardRef(
+const MKButton = forwardRef(
   ({ color, variant, size, circular, iconOnly, children, ...rest }, ref) => (
     <MKButtonRoot
       {...rest}
@@ -39,7 +39,7 @@ const MKButtonComponent = forwardRef(
 );
 
 // Setting default values for the props of MKButton
-MKButtonComponent.defaultProps = {
+MKButton.defaultProps = {
   size: 'medium',
   variant: 'contained',
   color: 'white',
@@ -48,7 +48,7 @@ MKButtonComponent.defaultProps = {
 };
 
 // Typechecking props for the MKButton
-MKButtonComponent.propTypes = {
+MKButton.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   variant: PropTypes.oneOf(['text', 'contained', 'outlined', 'gradient']),
   color: PropTypes.oneOf([
@@ -68,4 +68,4 @@ MKButtonComponent.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export const MKButton = MKButtonComponent;
+export default MKButton;

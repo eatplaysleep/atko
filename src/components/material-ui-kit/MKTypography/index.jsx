@@ -23,7 +23,7 @@ import PropTypes from 'prop-types';
 // Custom styles for MKTypography
 import MKTypographyRoot from 'components/material-ui-kit/MKTypography/MKTypographyRoot';
 
-const MKTypographyComponent = forwardRef(
+const MKTypography = forwardRef(
   (
     { color, fontWeight, textTransform, verticalAlign, textGradient, opacity, children, ...rest },
     ref
@@ -46,7 +46,7 @@ const MKTypographyComponent = forwardRef(
 );
 
 // Setting default values for the props of MKTypography
-MKTypographyComponent.defaultProps = {
+MKTypography.defaultProps = {
   color: 'dark',
   fontWeight: false,
   textTransform: 'none',
@@ -56,7 +56,7 @@ MKTypographyComponent.defaultProps = {
 };
 
 // Typechecking props for the MKTypography
-MKTypographyComponent.propTypes = {
+MKTypography.propTypes = {
   color: PropTypes.oneOf([
     'inherit',
     'primary',
@@ -88,4 +88,4 @@ MKTypographyComponent.propTypes = {
   opacity: PropTypes.number,
 };
 
-export const MKTypography = MKTypographyComponent;
+export default MKTypography;

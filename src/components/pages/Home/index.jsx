@@ -20,7 +20,8 @@
 import { Card, Container, Grid } from '@mui/material';
 
 // Material Kit 2 React components
-import { MKBox, MKTypography, MKSocialButton, PageLayout } from 'components';
+import MK from 'components/material-ui-kit';
+import { PageLayout } from 'components';
 
 // Material Kit 2 React examples
 // import FilledInfoCard from 'examples/Cards/InfoCards/FilledInfoCard';
@@ -52,7 +53,7 @@ export const Home = () => (
         placeItems: 'center',
       }}
     > */}
-    <MKBox
+    <MK.Box
       minHeight='75vh'
       width='100%'
       sx={{
@@ -65,7 +66,7 @@ export const Home = () => (
     >
       <Container>
         <Grid container item xs={12} lg={7} justifyContent='center' mx='auto'>
-          <MKTypography
+          <MK.Typography
             variant='h1'
             color='white'
             mt={-6}
@@ -77,8 +78,8 @@ export const Home = () => (
             })}
           >
             Material Kit 2 React{' '}
-          </MKTypography>
-          <MKTypography
+          </MK.Typography>
+          <MK.Typography
             variant='body1'
             color='white'
             textAlign='center'
@@ -87,10 +88,10 @@ export const Home = () => (
           >
             Free & Open Source Web UI Kit built over ReactJS &amp; MUI. Join over 1.6 million
             developers around the world.
-          </MKTypography>
+          </MK.Typography>
         </Grid>
       </Container>
-    </MKBox>
+    </MK.Box>
     <Card
       sx={{
         p: 2,
@@ -153,16 +154,16 @@ export const Home = () => (
       </Container>
       {/* <Testimonials />
         <Download /> */}
-      <MKBox pt={18} pb={6}>
+      <MK.Box pt={18} pb={6}>
         <Container>
           <Grid container spacing={3}>
             <Grid item xs={12} lg={5} ml='auto' sx={{ textAlign: { xs: 'center', lg: 'left' } }}>
-              <MKTypography variant='h4' fontWeight='bold' mb={0.5}>
+              <MK.Typography variant='h4' fontWeight='bold' mb={0.5}>
                 Thank you for your support!
-              </MKTypography>
-              <MKTypography variant='body1' color='text'>
+              </MK.Typography>
+              <MK.Typography variant='body1' color='text'>
                 We deliver the best web products
-              </MKTypography>
+              </MK.Typography>
             </Grid>
             <Grid
               item
@@ -172,7 +173,7 @@ export const Home = () => (
               mr={{ xs: 0, lg: 'auto' }}
               sx={{ textAlign: { xs: 'center', lg: 'right' } }}
             >
-              <MKSocialButton
+              <MK.SocialButton
                 component='a'
                 href='https://twitter.com/intent/tweet?text=Check%20Material%20Design%20System%20made%20by%20%40CreativeTim%20%23webdesign%20%23designsystem%20%23mui5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fmaterial-kit-react'
                 target='_blank'
@@ -181,8 +182,8 @@ export const Home = () => (
               >
                 <i className='fab fa-twitter' />
                 &nbsp;Tweet
-              </MKSocialButton>
-              <MKSocialButton
+              </MK.SocialButton>
+              <MK.SocialButton
                 component='a'
                 href='https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-kit-react'
                 target='_blank'
@@ -191,8 +192,8 @@ export const Home = () => (
               >
                 <i className='fab fa-facebook' />
                 &nbsp;Share
-              </MKSocialButton>
-              <MKSocialButton
+              </MK.SocialButton>
+              <MK.SocialButton
                 component='a'
                 href='https://www.pinterest.com/pin/create/button/?url=https://www.creative-tim.com/product/material-kit-react'
                 target='_blank'
@@ -200,11 +201,11 @@ export const Home = () => (
               >
                 <i className='fab fa-pinterest' />
                 &nbsp;Pin it
-              </MKSocialButton>
+              </MK.SocialButton>
             </Grid>
           </Grid>
         </Container>
-      </MKBox>
+      </MK.Box>
     </Card>
   </>
 );

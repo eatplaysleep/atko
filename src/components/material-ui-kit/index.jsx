@@ -4,8 +4,10 @@
  * @format
  */
 
-export * from './MKAvatar';
-export * from './MKBox';
-export * from './MKButton';
-export * from './MKSocialButton';
-export * from './MKTypography';
+import Avatar from './MKAvatar';
+import Box from './MKBox';
+import Button from './MKButton';
+import SocialButton from './MKSocialButton';
+import Typography from './MKTypography';
+
+export default { Avatar, Box, Button, SocialButton, Typography };

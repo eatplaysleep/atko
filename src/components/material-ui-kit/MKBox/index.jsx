@@ -23,7 +23,7 @@ import PropTypes from 'prop-types';
 // Custom styles for MKBox
 import { MKBoxRoot } from 'components/material-ui-kit/MKBox/MKBoxRoot';
 
-const MKBoxComponent = forwardRef(
+const MKBox = forwardRef(
   ({ variant, bgColor, color, opacity, borderRadius, shadow, coloredShadow, ...rest }, ref) => (
     <MKBoxRoot
       {...rest}
@@ -34,7 +34,7 @@ const MKBoxComponent = forwardRef(
 );
 
 // Setting default values for the props of MKBox
-MKBoxComponent.defaultProps = {
+MKBox.defaultProps = {
   variant: 'contained',
   bgColor: 'transparent',
   color: 'dark',
@@ -45,7 +45,7 @@ MKBoxComponent.defaultProps = {
 };
 
 // Typechecking props for the MKBox
-MKBoxComponent.propTypes = {
+MKBox.propTypes = {
   variant: PropTypes.oneOf(['contained', 'gradient']),
   bgColor: PropTypes.string,
   color: PropTypes.string,
@@ -65,4 +65,4 @@ MKBoxComponent.propTypes = {
   ]),
 };
 
-export const MKBox = MKBoxComponent;
+export default MKBox;

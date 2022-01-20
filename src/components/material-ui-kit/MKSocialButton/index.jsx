@@ -23,23 +23,21 @@ import PropTypes from 'prop-types';
 // Custom styles for MKSocialButton
 import MKSocialButtonRoot from 'components/material-ui-kit/MKSocialButton/MKSocialButtonRoot';
 
-const MKSocialButtonComponent = forwardRef(
-  ({ color, size, iconOnly, circular, children, ...rest }, ref) => (
-    <MKSocialButtonRoot
-      {...rest}
-      ref={ref}
-      variant='contained'
-      color='primary'
-      size={size}
-      ownerState={{ color, size, iconOnly, circular }}
-    >
-      {children}
-    </MKSocialButtonRoot>
-  )
-);
+const MKSocialButton = forwardRef(({ color, size, iconOnly, circular, children, ...rest }, ref) => (
+  <MKSocialButtonRoot
+    {...rest}
+    ref={ref}
+    variant='contained'
+    color='primary'
+    size={size}
+    ownerState={{ color, size, iconOnly, circular }}
+  >
+    {children}
+  </MKSocialButtonRoot>
+));
 
 // Setting default values for the props of MKSocialButton
-MKSocialButtonComponent.defaultProps = {
+MKSocialButton.defaultProps = {
   size: 'medium',
   color: 'facebook',
   iconOnly: false,
@@ -47,7 +45,7 @@ MKSocialButtonComponent.defaultProps = {
 };
 
 // Typechecking props for the MKSocialButton
-MKSocialButtonComponent.propTypes = {
+MKSocialButton.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   color: PropTypes.oneOf([
     'facebook',
@@ -68,4 +66,4 @@ MKSocialButtonComponent.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export const MKSocialButton = MKSocialButtonComponent;
+export default MKSocialButton;

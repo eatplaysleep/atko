@@ -15,14 +15,16 @@ import CloseIcon from '@mui/icons-material/Close';
 import { MKBox, MKButton, MKTypography } from 'components';
 
 const SimpleModal = ({
-  title,
-  content,
   actions,
+  bgColor,
+  children,
+  content,
+  label,
+  onClick,
   onClose,
   primary,
   secondary,
-  bgColor,
-  children,
+  title,
   ...props
 }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -63,35 +65,46 @@ const SimpleModal = ({
     typeof title === 'string' ? <MKTypography variant='h5'>{title}</MKTypography> : title;
 
   return (
-    <MuiModal open={isVisible} onClose={handleClose} sx={{ display: 'grid', placeItems: 'center' }}>
-      <MKBox
-        position='relative'
-        width='500px'
-        display='flex'
-        flexDirection='column'
-        borderRadius='xl'
-        bgColor={bgColor}
-        shadow='xl'
-        {...props}
+    <>
+      <MKBox>
+        <MKButton variant='gradient' color='info' onClick={onClick ?? toggleModal}>
+          {label}
+        </MKButton>
+      </MKBox>
+      <MuiModal
+        open={isVisible}
+        onClose={handleClose}
+        sx={{ display: 'grid', placeItems: 'center' }}
       >
-        <MKBox display='flex' alginItems='center' justifyContent='space-between' p={2}>
-          {titleNode}
-          <CloseIcon fontSize='medium' sx={{ cursor: 'pointer' }} onClick={handleClose} />
-        </MKBox>
-        <Divider sx={{ my: 0 }} />
-        <MKBox p={2}>
-          {contentNode}
-          {children}
-        </MKBox>
-        <Divider sx={{ my: 0 }} />
-        <MKBox display='flex' justifyContent='flex-end' p={1.5}>
-          <MKBox display='flex' justifyContent='space-between' p={1.5} width='60%'>
-            {secondaryAction}
-            {primaryAction}
+        <MKBox
+          position='relative'
+          width='500px'
+          display='flex'
+          flexDirection='column'
+          borderRadius='xl'
+          bgColor={bgColor}
+          shadow='xl'
+          {...props}
+        >
+          <MKBox display='flex' alginItems='center' justifyContent='space-between' p={2}>
+            {titleNode}
+            <CloseIcon fontSize='medium' sx={{ cursor: 'pointer' }} onClick={handleClose} />
+          </MKBox>
+          <Divider sx={{ my: 0 }} />
+          <MKBox p={2}>
+            {contentNode}
+            {children}
+          </MKBox>
+          <Divider sx={{ my: 0 }} />
+          <MKBox display='flex' justifyContent='flex-end' p={1.5}>
+            <MKBox display='flex' justifyContent='space-between' p={1.5} width='60%'>
+              {secondaryAction}
+              {primaryAction}
+            </MKBox>
           </MKBox>
         </MKBox>
-      </MKBox>
-    </MuiModal>
+      </MuiModal>
+    </>
   );
 };
 
@@ -104,6 +117,8 @@ SimpleModal.propTypes = {
   bgColor: PropTypes.string,
   children: PropTypes.node,
   content: PropTypes.oneOf([PropTypes.string, PropTypes.node]),
+  label: PropTypes.string,
+  onClick: PropTypes.func,
   onClose: PropTypes.func,
   primary: PropTypes.oneOf([PropTypes.string, PropTypes.node]),
   secondary: PropTypes.oneOf([PropTypes.string, PropTypes.node]),

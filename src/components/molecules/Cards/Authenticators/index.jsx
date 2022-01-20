@@ -22,9 +22,10 @@ import PropTypes from 'prop-types';
 import { Card, Divider } from '@mui/material';
 
 // Material Dashboard 2 React components
-import { MKBox, MKTypography } from 'components';
+// import { MK.Box, MK.Typography } from 'components';
+import MK from 'components/material-ui-kit';
 
-const AuthenticatorsCardRoot = ({ title, description, data, shadow }) => {
+const AuthenticatorsCard = ({ title, description, data, shadow }) => {
   const labels = [];
   const values = [];
 
@@ -45,52 +46,52 @@ const AuthenticatorsCardRoot = ({ title, description, data, shadow }) => {
 
   // Render the card info items
   const renderData = labels.map((label, key) => (
-    <MKBox key={label} display='flex' py={1} pr={2}>
-      <MKTypography variant='button' fontWeight='bold' textTransform='capitalize'>
+    <MK.Box key={label} display='flex' py={1} pr={2}>
+      <MK.Typography variant='button' fontWeight='bold' textTransform='capitalize'>
         {label}: &nbsp;
-      </MKTypography>
-      <MKTypography variant='button' fontWeight='regular' color='text'>
+      </MK.Typography>
+      <MK.Typography variant='button' fontWeight='regular' color='text'>
         &nbsp;{values[key]}
-      </MKTypography>
-    </MKBox>
+      </MK.Typography>
+    </MK.Box>
   ));
 
   return (
     <Card sx={{ height: '100%', boxShadow: !shadow && 'none' }}>
-      <MKBox display='flex' justifyContent='space-between' alignItems='center' pt={2} px={2}>
-        <MKTypography variant='h6' fontWeight='medium' textTransform='capitalize'>
+      <MK.Box display='flex' justifyContent='space-between' alignItems='center' pt={2} px={2}>
+        <MK.Typography variant='h6' fontWeight='medium' textTransform='capitalize'>
           {title}
-        </MKTypography>
-      </MKBox>
-      <MKBox p={2}>
+        </MK.Typography>
+      </MK.Box>
+      <MK.Box p={2}>
         {description && (
-          <MKBox mb={2} lineHeight={1}>
-            <MKTypography variant='button' color='text' fontWeight='light'>
+          <MK.Box mb={2} lineHeight={1}>
+            <MK.Typography variant='button' color='text' fontWeight='light'>
               {description}
-            </MKTypography>
-          </MKBox>
+            </MK.Typography>
+          </MK.Box>
         )}
-        <MKBox opacity={0.3}>
+        <MK.Box opacity={0.3}>
           <Divider />
-        </MKBox>
-        <MKBox>{renderData}</MKBox>
-      </MKBox>
+        </MK.Box>
+        <MK.Box>{renderData}</MK.Box>
+      </MK.Box>
     </Card>
   );
 };
 
 // Setting default props for the ProfileInfoCard
-AuthenticatorsCardRoot.defaultProps = {
+AuthenticatorsCard.defaultProps = {
   data: {},
   shadow: true,
 };
 
 // Typechecking props for the ProfileInfoCard
-AuthenticatorsCardRoot.propTypes = {
+AuthenticatorsCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   data: PropTypes.objectOf(PropTypes.string),
   shadow: PropTypes.bool,
 };
 
-export const AuthenticatorsCard = AuthenticatorsCardRoot;
+export default AuthenticatorsCard;

@@ -24,7 +24,7 @@ rules:
   react/jsx-props-no-spreading: 'off'
   #   - custom: ignore
   react/require-default-props: 'off'
-no-unused-vars: warn
+  no-unused-vars: warn
 # prettier/prettier:
 #   - error
 #   - endOfLine: auto

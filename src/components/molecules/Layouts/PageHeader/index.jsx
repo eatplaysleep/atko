@@ -6,15 +6,15 @@ import PropTypes from 'prop-types';
 import { Container } from '@mui/material';
 
 // Material Kit 2 React components
-import { MKBox } from 'components';
+import MK from 'components/material-ui-kit';
 
 // TODO implement unsplash API
 // Images
 import bgImage from 'assets/images/city-profile.jpg';
 
-const PageHeaderRoot = ({ bgColor, children, container, ...props }) => (
-  <MKBox bgColor={bgColor}>
-    <MKBox
+const PageHeader = ({ bgColor, children, container, ...props }) => (
+  <MK.Box bgColor={bgColor}>
+    <MK.Box
       minHeight='50vmin'
       width='100%'
       sx={{
@@ -32,18 +32,18 @@ const PageHeaderRoot = ({ bgColor, children, container, ...props }) => (
     />
     {container && <Container>{children}</Container>}
     {!container && { children }}
-  </MKBox>
+  </MK.Box>
 );
 
-PageHeaderRoot.defaultProps = {
+PageHeader.defaultProps = {
   bgColor: 'white',
   container: true,
 };
 
-PageHeaderRoot.propTypes = {
+PageHeader.propTypes = {
   bgColor: PropTypes.string,
   children: PropTypes.node,
   container: PropTypes.bool,
 };
 
-export const PageHeader = PageHeaderRoot;
+export default PageHeader;

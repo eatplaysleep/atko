@@ -3,15 +3,15 @@
 import { Card, Divider, Grid } from '@mui/material';
 import { Facebook, Instagram, Twitter } from '@mui/icons-material';
 
+import MK from 'components/material-ui-kit';
 import {
-  MKBox,
   AuthenticatorsCard,
   ProfileCardHeader,
   ProfileInfoCard,
   ProfileSettingsCard,
 } from 'components';
 
-const ProfileCardRoot = () => (
+const ProfileCard = () => (
   <Card
     sx={{
       position: 'relative',
@@ -22,7 +22,7 @@ const ProfileCardRoot = () => (
     }}
   >
     <ProfileCardHeader>
-      <MKBox mt={5} mb={3}>
+      <MK.Box mt={5} mb={3}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={5} xl={4}>
             <ProfileInfoCard
@@ -64,9 +64,9 @@ const ProfileCardRoot = () => (
             <AuthenticatorsCard title='authenticators' shadow={false} />
           </Grid>
         </Grid>
-      </MKBox>
+      </MK.Box>
     </ProfileCardHeader>
   </Card>
 );
 
-export const ProfileCard = ProfileCardRoot;
+export default ProfileCard;

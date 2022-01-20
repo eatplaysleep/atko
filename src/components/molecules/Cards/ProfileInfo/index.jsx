@@ -25,13 +25,13 @@ import PropTypes from 'prop-types';
 import { Card, Divider, Icon, Tooltip } from '@mui/material';
 
 // Material Dashboard 2 React components
-import { MKBox, MKTypography } from 'components';
+import MK from 'components/material-ui-kit';
 
 // Material Dashboard 2 PRO React base styles
 import colors from 'assets/theme/base/colors';
 import typography from 'assets/theme/base/typography';
 
-const ProfileInfoCardRoot = ({ title, description, info, social, action, shadow }) => {
+const ProfileInfoCard = ({ title, description, info, social, action, shadow }) => {
   const labels = [];
   const values = [];
   const { socialMediaColors } = colors;
@@ -54,19 +54,19 @@ const ProfileInfoCardRoot = ({ title, description, info, social, action, shadow 
 
   // Render the card info items
   const renderItems = labels.map((label, key) => (
-    <MKBox key={label} display='flex' py={1} pr={2}>
-      <MKTypography variant='button' fontWeight='bold' textTransform='capitalize'>
+    <MK.Box key={label} display='flex' py={1} pr={2}>
+      <MK.Typography variant='button' fontWeight='bold' textTransform='capitalize'>
         {label}: &nbsp;
-      </MKTypography>
-      <MKTypography variant='button' fontWeight='regular' color='text'>
+      </MK.Typography>
+      <MK.Typography variant='button' fontWeight='regular' color='text'>
         &nbsp;{values[key]}
-      </MKTypography>
-    </MKBox>
+      </MK.Typography>
+    </MK.Box>
   ));
 
   // Render the card social media icons
   const renderSocial = social.map(({ link, icon, color }) => (
-    <MKBox
+    <MK.Box
       key={color}
       component='a'
       href={link}
@@ -79,51 +79,51 @@ const ProfileInfoCardRoot = ({ title, description, info, social, action, shadow 
       lineHeight={1}
     >
       {icon}
-    </MKBox>
+    </MK.Box>
   ));
 
   return (
     <Card sx={{ pr: 1, height: '100%', boxShadow: !shadow && 'none' }}>
-      <MKBox display='flex' justifyContent='space-between' alignItems='center' pt={2} px={2}>
-        <MKTypography variant='h6' fontWeight='medium' textTransform='capitalize'>
+      <MK.Box display='flex' justifyContent='space-between' alignItems='center' pt={2} px={2}>
+        <MK.Typography variant='h6' fontWeight='medium' textTransform='capitalize'>
           {title}
-        </MKTypography>
-        <MKTypography component={Link} to={action.route} variant='body2' color='secondary'>
+        </MK.Typography>
+        <MK.Typography component={Link} to={action.route} variant='body2' color='secondary'>
           <Tooltip title={action.tooltip} placement='top'>
             <Icon>edit</Icon>
           </Tooltip>
-        </MKTypography>
-      </MKBox>
-      <MKBox p={2}>
-        <MKBox mb={2} lineHeight={1}>
-          <MKTypography variant='button' color='text' fontWeight='light'>
+        </MK.Typography>
+      </MK.Box>
+      <MK.Box p={2}>
+        <MK.Box mb={2} lineHeight={1}>
+          <MK.Typography variant='button' color='text' fontWeight='light'>
             {description}
-          </MKTypography>
-        </MKBox>
-        <MKBox opacity={0.3}>
+          </MK.Typography>
+        </MK.Box>
+        <MK.Box opacity={0.3}>
           <Divider />
-        </MKBox>
-        <MKBox>
+        </MK.Box>
+        <MK.Box>
           {renderItems}
-          <MKBox display='flex' py={1} pr={2}>
-            <MKTypography variant='button' fontWeight='bold' textTransform='capitalize'>
+          <MK.Box display='flex' py={1} pr={2}>
+            <MK.Typography variant='button' fontWeight='bold' textTransform='capitalize'>
               social: &nbsp;
-            </MKTypography>
+            </MK.Typography>
             {renderSocial}
-          </MKBox>
-        </MKBox>
-      </MKBox>
+          </MK.Box>
+        </MK.Box>
+      </MK.Box>
     </Card>
   );
 };
 
 // Setting default props for the ProfileInfoCard
-ProfileInfoCardRoot.defaultProps = {
+ProfileInfoCard.defaultProps = {
   shadow: true,
 };
 
 // Typechecking props for the ProfileInfoCard
-ProfileInfoCardRoot.propTypes = {
+ProfileInfoCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   info: PropTypes.objectOf(PropTypes.string).isRequired,
@@ -135,4 +135,4 @@ ProfileInfoCardRoot.propTypes = {
   shadow: PropTypes.bool,
 };
 
-export const ProfileInfoCard = ProfileInfoCardRoot;
+export default ProfileInfoCard;

@@ -26,16 +26,16 @@ import PropTypes from 'prop-types';
 // @mui material components
 import { Collapse, Link as MuiLink } from '@mui/material';
 
-import { NavbarDropdown, MKBox, MKTypography } from 'components';
+import MK from 'components/material-ui-kit';
 
-const DefaultNavbarMobile = ({ routes, open }) => {
+const NavbarMobile = ({ routes, open }) => {
   const [collapse, setCollapse] = useState('');
 
   const handleSetCollapse = (name) => (collapse === name ? setCollapse(false) : setCollapse(name));
 
   const renderNavbarItems = routes.map(
     ({ name, icon, collapse: routeCollapses, href, route, collapse: navCollapse }) => (
-      <NavbarDropdown
+      <MK.NavbarDropdown
         key={name}
         name={name}
         icon={icon}
@@ -45,13 +45,13 @@ const DefaultNavbarMobile = ({ routes, open }) => {
         route={route}
         collapse={Boolean(navCollapse)}
       >
-        <MKBox sx={{ height: '15rem', maxHeight: '15rem', overflowY: 'scroll' }}>
+        <MK.Box sx={{ height: '15rem', maxHeight: '15rem', overflowY: 'scroll' }}>
           {routeCollapses &&
             routeCollapses.map((item) => (
-              <MKBox key={item.name} px={2}>
+              <MK.Box key={item.name} px={2}>
                 {item.collapse ? (
                   <>
-                    <MKTypography
+                    <MK.Typography
                       display='block'
                       variant='button'
                       fontWeight='bold'
@@ -60,9 +60,9 @@ const DefaultNavbarMobile = ({ routes, open }) => {
                       px={0.5}
                     >
                       {item.name}
-                    </MKTypography>
+                    </MK.Typography>
                     {item.collapse.map((el) => (
-                      <MKTypography
+                      <MK.Typography
                         key={el.name}
                         component={el.route ? Link : MuiLink}
                         to={el.route ? el.route : ''}
@@ -89,11 +89,11 @@ const DefaultNavbarMobile = ({ routes, open }) => {
                         })}
                       >
                         {el.name}
-                      </MKTypography>
+                      </MK.Typography>
                     ))}
                   </>
                 ) : (
-                  <MKBox
+                  <MK.Box
                     key={item.key}
                     display='block'
                     component={item.route ? Link : MuiLink}
@@ -118,15 +118,15 @@ const DefaultNavbarMobile = ({ routes, open }) => {
                       },
                     })}
                   >
-                    <MKTypography
+                    <MK.Typography
                       display='block'
                       variant='button'
                       fontWeight='bold'
                       textTransform='capitalize'
                     >
                       {item.name}
-                    </MKTypography>
-                    <MKTypography
+                    </MK.Typography>
+                    <MK.Typography
                       display='block'
                       variant='button'
                       color='text'
@@ -134,29 +134,29 @@ const DefaultNavbarMobile = ({ routes, open }) => {
                       sx={{ transition: 'all 300ms linear' }}
                     >
                       {item.description}
-                    </MKTypography>
-                  </MKBox>
+                    </MK.Typography>
+                  </MK.Box>
                 )}
-              </MKBox>
+              </MK.Box>
             ))}
-        </MKBox>
-      </NavbarDropdown>
+        </MK.Box>
+      </MK.NavbarDropdown>
     )
   );
 
   return (
     <Collapse in={Boolean(open)} timeout='auto' unmountOnExit>
-      <MKBox width='calc(100% + 1.625rem)' my={2} ml={-2}>
+      <MK.Box width='calc(100% + 1.625rem)' my={2} ml={-2}>
         {renderNavbarItems}
-      </MKBox>
+      </MK.Box>
     </Collapse>
   );
 };
 
 // Typechecking props for the DefaultNavbarMobile
-DefaultNavbarMobile.propTypes = {
+NavbarMobile.propTypes = {
   routes: PropTypes.arrayOf(PropTypes.object).isRequired,
   open: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]).isRequired,
 };
 
-export const NavbarMobile = DefaultNavbarMobile;
+export default NavbarMobile;
