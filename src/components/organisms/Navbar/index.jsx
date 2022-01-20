@@ -24,19 +24,11 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // @mui material components
-import {
-  Container,
-  Divider,
-  Grid,
-  Grow,
-  Icon,
-  Link as MuiLink,
-  Modal,
-  Popper,
-} from '@mui/material';
+import { Container, Divider, Grid, Grow, Icon, Link as MuiLink, Popper } from '@mui/material';
 
 import MK from 'components/material-ui-kit';
-import { NavbarDropdown, NavbarMobile } from 'components';
+// eslint-disable-next-line import/no-cycle
+import { Modal, NavbarDropdown, NavbarMobile } from 'components';
 
 // Material Kit 2 React base styles
 import breakpoints from 'assets/theme/base/breakpoints';

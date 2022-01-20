@@ -16,6 +16,7 @@
  * @format
  */
 
+// eslint-disable-next-line import/no-cycle
 import { PageLayout, ProfileCard } from 'components';
 
 export const Me = () => (

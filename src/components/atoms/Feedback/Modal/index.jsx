@@ -6,7 +6,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 // @mui material components
-import { Divider, MuiModal } from '@mui/material';
+import { Divider, Modal as MuiModal } from '@mui/material';
 
 // @mui icons
 import CloseIcon from '@mui/icons-material/Close';

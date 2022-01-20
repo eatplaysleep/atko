@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 import { Container } from '@mui/material';
 
 // Material Kit 2 React routes
+// eslint-disable-next-line import/no-cycle
 import { footer as footerRoutes } from 'routes';
 
 // Material Kit 2 React components

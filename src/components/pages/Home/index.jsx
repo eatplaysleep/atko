@@ -21,7 +21,7 @@ import { Card, Container, Grid } from '@mui/material';
 
 // Material Kit 2 React components
 import MK from 'components/material-ui-kit';
-import { PageLayout } from 'components';
+// import { PageLayout } from 'components';
 
 // Material Kit 2 React examples
 // import FilledInfoCard from 'examples/Cards/InfoCards/FilledInfoCard';

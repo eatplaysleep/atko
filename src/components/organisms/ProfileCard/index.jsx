@@ -4,6 +4,7 @@ import { Card, Divider, Grid } from '@mui/material';
 import { Facebook, Instagram, Twitter } from '@mui/icons-material';
 
 import MK from 'components/material-ui-kit';
+// eslint-disable-next-line import/no-cycle
 import {
   AuthenticatorsCard,
   ProfileCardHeader,

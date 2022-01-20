@@ -4,7 +4,7 @@
 import { Facebook, GitHub, Twitter, YouTube } from '@mui/icons-material';
 
 // Material Kit 2 React components
-import { MKTypography } from 'components';
+import MK from 'components/material-ui-kit';
 
 // Images
 import logoCT from 'assets/images/logo-ct-dark.png';
@@ -72,9 +72,9 @@ export const footer = {
     },
   ],
   copyright: (
-    <MKTypography variant='button' fontWeight='regular'>
+    <MK.Typography variant='button' fontWeight='regular'>
       All rights reserved. Copyright &copy; {date} Material Kit by{' '}
-      <MKTypography
+      <MK.Typography
         component='a'
         href='https://www.creative-tim.com'
         target='_blank'
@@ -83,8 +83,8 @@ export const footer = {
         fontWeight='regular'
       >
         Creative Tim
-      </MKTypography>
+      </MK.Typography>
       .
-    </MKTypography>
+    </MK.Typography>
   ),
 };

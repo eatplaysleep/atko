@@ -26,6 +26,7 @@ import { Card, Grid, Link as MuiLink, Switch } from '@mui/material';
 // @mui icons
 import { Facebook, GitHub, Google } from '@mui/icons-material';
 
+// eslint-disable-next-line import/no-cycle
 import { PageLayout, SimpleFooter } from 'components';
 import MK from 'components/material-ui-kit';
 
