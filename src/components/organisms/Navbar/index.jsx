@@ -24,7 +24,16 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // @mui material components
-import { Container, Divider, Grid, Grow, Icon, Link as MuiLink, Popper } from '@mui/material';
+import {
+  Container,
+  Divider,
+  Grid,
+  Grow,
+  Icon,
+  Link as MuiLink,
+  Modal,
+  Popper,
+} from '@mui/material';
 
 import { MKBox, MKButton, MKTypography, NavbarDropdown, NavbarMobile } from 'components';
 
