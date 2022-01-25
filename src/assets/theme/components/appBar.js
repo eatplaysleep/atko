@@ -16,13 +16,13 @@
  */
 
 export default {
-  defaultProps: {
-    color: 'transparent',
-  },
+	defaultProps: {
+		color: 'transparent',
+	},
 
-  styleOverrides: {
-    root: {
-      boxShadow: 'none',
-    },
-  },
+	styleOverrides: {
+		root: {
+			boxShadow: 'none',
+		},
+	},
 };

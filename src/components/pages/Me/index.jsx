@@ -20,7 +20,7 @@
 import { PageLayout, ProfileCard } from 'components';
 
 export const Me = () => (
-  <PageLayout>
-    <ProfileCard />
-  </PageLayout>
+	<PageLayout>
+		<ProfileCard />
+	</PageLayout>
 );

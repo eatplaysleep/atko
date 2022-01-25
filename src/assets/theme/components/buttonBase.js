@@ -16,7 +16,7 @@
  */
 
 export default {
-  defaultProps: {
-    disableRipple: false,
-  },
+	defaultProps: {
+		disableRipple: false,
+	},
 };

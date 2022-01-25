@@ -16,14 +16,14 @@
  */
 
 export default {
-  defaultProps: {
-    disableGutters: true,
-  },
+	defaultProps: {
+		disableGutters: true,
+	},
 
-  styleOverrides: {
-    root: {
-      paddingTop: 0,
-      paddingBottom: 0,
-    },
-  },
+	styleOverrides: {
+		root: {
+			paddingTop: 0,
+			paddingBottom: 0,
+		},
+	},
 };

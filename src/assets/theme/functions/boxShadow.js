@@ -35,13 +35,13 @@ import pxToRem from 'assets/theme/functions/pxToRem';
 
 // eslint-disable-next-line default-param-last
 const boxShadow = (offset = [], radius = [], color, opacity, inset = '') => {
-  const [x, y] = offset;
-  const [blur, spread] = radius;
+	const [x, y] = offset;
+	const [blur, spread] = radius;
 
-  return `${inset} ${pxToRem(x)} ${pxToRem(y)} ${pxToRem(blur)} ${pxToRem(spread)} ${rgba(
-    color,
-    opacity
-  )}`;
+	return `${inset} ${pxToRem(x)} ${pxToRem(y)} ${pxToRem(blur)} ${pxToRem(spread)} ${rgba(
+		color,
+		opacity
+	)}`;
 };
 
 export default boxShadow;

@@ -26,10 +26,10 @@ const { size } = typography;
 const { text } = colors;
 
 export default {
-  styleOverrides: {
-    root: {
-      fontSize: size.md,
-      color: text.main,
-    },
-  },
+	styleOverrides: {
+		root: {
+			fontSize: size.md,
+			color: text.main,
+		},
+	},
 };

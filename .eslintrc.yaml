@@ -8,7 +8,6 @@ extends:
   - airbnb
   - plugin:react/jsx-runtime
   - plugin:prettier/recommended
-  - prettier/prettier
   - prettier
 parserOptions:
   ecmaFeatures:
@@ -19,14 +18,15 @@ plugins:
   - react
   - prettier
 rules:
+  consistent-return: 'off'
   import/prefer-default-export: 'off'
   react/function-component-definition: 'off'
   react/jsx-props-no-spreading: 'off'
   #   - custom: ignore
   react/require-default-props: 'off'
   no-unused-vars: warn
-# prettier/prettier:
-#   - error
+  prettier/prettier:
+    - warn
 #   - endOfLine: auto
 #     jsxSingleQuote: true
 # react/react-in-jsx-scope: 'off'
@@ -41,4 +41,4 @@ settings:
   import/resolver:
     node:
       paths:
-        - src
+        - 'src'

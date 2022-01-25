@@ -22,19 +22,19 @@ import Navbar from './organisms/Navbar';
 import ProfileCard from './organisms/ProfileCard';
 
 export {
-  AuthenticatorsCard,
-  Modal,
-  Navbar,
-  NavbarDropdown,
-  NavbarMobile,
-  ProfileCard,
-  ProfileCardHeader,
-  ProfileInfoCard,
-  ProfileSettingsCard,
-  PageFooter,
-  PageHeader,
-  PageLayout,
-  SimpleFooter,
+	AuthenticatorsCard,
+	Modal,
+	Navbar,
+	NavbarDropdown,
+	NavbarMobile,
+	ProfileCard,
+	ProfileCardHeader,
+	ProfileInfoCard,
+	ProfileSettingsCard,
+	PageFooter,
+	PageHeader,
+	PageLayout,
+	SimpleFooter,
 };
 
 export * from './pages/Home';

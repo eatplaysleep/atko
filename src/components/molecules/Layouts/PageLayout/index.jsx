@@ -17,53 +17,53 @@ import PageHeader from 'components/molecules/Layouts/PageHeader';
 import PageFooter from 'components/molecules/Layouts/PageFooter';
 
 const PageLayout = ({ children, container, footer, header }) => {
-  let pageHeader = <PageHeader />;
-  let pageFooter = <PageFooter content={footerRoutes} />;
-  let showHeader = header;
-  let showFooter = footer;
+	let pageHeader = <PageHeader />;
+	let pageFooter = <PageFooter content={footerRoutes} />;
+	let showHeader = header;
+	let showFooter = footer;
 
-  const c = [];
+	const c = [];
 
-  React.Children.forEach(children, (child) => {
-    switch (child?.type?.name) {
-      case 'PageHeaderRoot':
-        pageHeader = child;
-        showHeader = true;
-        break;
-      case 'PageFooterRoot':
-        pageFooter = child;
-        showFooter = true;
-        break;
-      default:
-        c.push(child);
-    }
-  });
+	React.Children.forEach(children, child => {
+		switch (child?.type?.name) {
+			case 'PageHeaderRoot':
+				pageHeader = child;
+				showHeader = true;
+				break;
+			case 'PageFooterRoot':
+				pageFooter = child;
+				showFooter = true;
+				break;
+			default:
+				c.push(child);
+		}
+	});
 
-  return (
-    <>
-      {showHeader && pageHeader}
-      {!showHeader && <MK.Box minHeight='40vmin' />}
-      {container && <Container>{c}</Container>}
-      {!container && { c }}
-      {showFooter && pageFooter}
-    </>
-  );
+	return (
+		<>
+			{showHeader && pageHeader}
+			{!showHeader && <MK.Box minHeight='40vmin' />}
+			{container && <Container>{c}</Container>}
+			{!container && { c }}
+			{showFooter && pageFooter}
+		</>
+	);
 };
 
 PageLayout.Header = PageHeader;
 PageLayout.Footer = PageFooter;
 
 PageLayout.defaultProps = {
-  container: true,
-  footer: true,
-  header: false,
+	container: true,
+	footer: true,
+	header: false,
 };
 
 PageLayout.propTypes = {
-  children: PropTypes.node,
-  container: PropTypes.bool,
-  footer: PropTypes.bool,
-  header: PropTypes.bool,
+	children: PropTypes.node,
+	container: PropTypes.bool,
+	footer: PropTypes.bool,
+	header: PropTypes.bool,
 };
 
 export default PageLayout;

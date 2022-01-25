@@ -1,8 +1,10 @@
 # @format
 ---
-endOfLine: auto
+arrowParens: avoid
 insertPragma: true
 jsxSingleQuote: true
+useTabs: true
+endOfLine: auto
 printWidth: 100
 semi: true
 singleQuote: true

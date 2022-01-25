@@ -28,93 +28,93 @@ import { Collapse, Icon } from '@mui/material';
 import MK from 'components/material-ui-kit';
 
 const NavbarDropdown = ({
-  name,
-  icon,
-  children,
-  collapseStatus,
-  light,
-  href,
-  route,
-  collapse,
-  ...rest
+	name,
+	icon,
+	children,
+	collapseStatus,
+	light,
+	href,
+	route,
+	collapse,
+	...rest
 }) => {
-  const linkComponent = {
-    component: 'a',
-    href,
-    target: '_blank',
-    rel: 'noreferrer',
-  };
+	const linkComponent = {
+		component: 'a',
+		href,
+		target: '_blank',
+		rel: 'noreferrer',
+	};
 
-  const routeComponent = {
-    component: Link,
-    to: route,
-  };
+	const routeComponent = {
+		component: Link,
+		to: route,
+	};
 
-  return (
-    <>
-      <MK.Box
-        {...rest}
-        mx={1}
-        p={1}
-        display='flex'
-        alignItems='baseline'
-        color={light ? 'white' : 'dark'}
-        opacity={light ? 1 : 0.6}
-        sx={{ cursor: 'pointer', userSelect: 'none' }}
-        {...(route && routeComponent)}
-        {...(href && linkComponent)}
-      >
-        <MK.Typography
-          variant='body2'
-          lineHeight={1}
-          color='inherit'
-          sx={{ alignSelf: 'center', '& *': { verticalAlign: 'middle' } }}
-        >
-          {icon}
-        </MK.Typography>
-        <MK.Typography
-          variant='button'
-          fontWeight='regular'
-          textTransform='capitalize'
-          color={light ? 'white' : 'dark'}
-          sx={{ fontWeight: '100%', ml: 1, mr: 0.25 }}
-        >
-          {name}
-        </MK.Typography>
-        <MK.Typography variant='body2' color={light ? 'white' : 'dark'} ml='auto'>
-          <Icon sx={{ fontWeight: 'normal', verticalAlign: 'middle' }}>
-            {collapse && 'keyboard_arrow_down'}
-          </Icon>
-        </MK.Typography>
-      </MK.Box>
-      {children && (
-        <Collapse in={Boolean(collapseStatus)} timeout={400} unmountOnExit>
-          {children}
-        </Collapse>
-      )}
-    </>
-  );
+	return (
+		<>
+			<MK.Box
+				{...rest}
+				mx={1}
+				p={1}
+				display='flex'
+				alignItems='baseline'
+				color={light ? 'white' : 'dark'}
+				opacity={light ? 1 : 0.6}
+				sx={{ cursor: 'pointer', userSelect: 'none' }}
+				{...(route && routeComponent)}
+				{...(href && linkComponent)}
+			>
+				<MK.Typography
+					variant='body2'
+					lineHeight={1}
+					color='inherit'
+					sx={{ alignSelf: 'center', '& *': { verticalAlign: 'middle' } }}
+				>
+					{icon}
+				</MK.Typography>
+				<MK.Typography
+					variant='button'
+					fontWeight='regular'
+					textTransform='capitalize'
+					color={light ? 'white' : 'dark'}
+					sx={{ fontWeight: '100%', ml: 1, mr: 0.25 }}
+				>
+					{name}
+				</MK.Typography>
+				<MK.Typography variant='body2' color={light ? 'white' : 'dark'} ml='auto'>
+					<Icon sx={{ fontWeight: 'normal', verticalAlign: 'middle' }}>
+						{collapse && 'keyboard_arrow_down'}
+					</Icon>
+				</MK.Typography>
+			</MK.Box>
+			{children && (
+				<Collapse in={Boolean(collapseStatus)} timeout={400} unmountOnExit>
+					{children}
+				</Collapse>
+			)}
+		</>
+	);
 };
 
 // Setting default values for the props of DefaultNavbarDropdown
 NavbarDropdown.defaultProps = {
-  children: false,
-  collapseStatus: false,
-  light: false,
-  href: '',
-  route: '',
+	children: false,
+	collapseStatus: false,
+	light: false,
+	href: '',
+	route: '',
 };
 
 // Typechecking props for the DefaultNavbarDropdown
 NavbarDropdown.propTypes = {
-  name: PropTypes.string.isRequired,
-  icon: PropTypes.node.isRequired,
-  children: PropTypes.node,
-  collapseStatus: PropTypes.bool,
-  light: PropTypes.bool,
-  href: PropTypes.string,
-  route: PropTypes.string,
-  collapse: PropTypes.bool.isRequired,
+	name: PropTypes.string.isRequired,
+	icon: PropTypes.node.isRequired,
+	children: PropTypes.node,
+	collapseStatus: PropTypes.bool,
+	light: PropTypes.bool,
+	href: PropTypes.string,
+	route: PropTypes.string,
+	collapse: PropTypes.bool.isRequired,
 };
 
 export default NavbarDropdown;
