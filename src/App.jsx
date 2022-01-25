@@ -1,6 +1,6 @@
 /** @format */
 import { Auth, Okta, React, config, useEffect } from 'common';
-import { Route, Navigate, Switch, useHistory, useLocation } from 'react-router-dom';
+import { Switch, Route, useHistory, useLocation } from 'react-router-dom';
 
 // @mui material components
 import { ThemeProvider } from '@mui/material/styles';
@@ -78,10 +78,10 @@ const App = () => {
 						/>
 						<Switch>
 							{getRoutes(routes)}
-							<Route path='/' element={<Home />} />
+							<Route path='/' exact component={Home} />
 							{/* <Route path='/signin' element={<SignInBasic />} /> */}
-							<Route path='/me' element={<Me />} />
-							<Route path='*' element={<Navigate to='/' />} />
+							<Route path='/me' exact component={Me} />
+							<Route path='*' component={Home} />
 						</Switch>
 					</Auth.Provider>
 				</Okta.Security>

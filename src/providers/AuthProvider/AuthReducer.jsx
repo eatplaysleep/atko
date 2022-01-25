@@ -89,6 +89,8 @@ export const AuthReducer = (state, action) => {
 			case actionTypes.login.cancel:
 			case actionTypes.login.success:
 				return _.merge({}, state, action?.payload, initialLoginState);
+			case actionTypes.user.info.fetch.start:
+				return _.merge({}, state, action?.payload, { isLoadingProfile: true });
 			default:
 				throw new Error(`Unhandled action type: ${action.type}`);
 		}

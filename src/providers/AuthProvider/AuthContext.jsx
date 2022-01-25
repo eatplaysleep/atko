@@ -2,7 +2,7 @@
 
 import { createContext, useEffect, useReducer, PropTypes } from 'common';
 import { useOktaAuth } from '@okta/okta-react';
-import { useAuthActions } from 'hooks';
+import useAuthActions from 'hooks/useAuthActions';
 import { AuthReducer, initialState } from './AuthReducer';
 import AuthDispatchContext from './AuthDispatcher';
 
@@ -15,7 +15,7 @@ const AuthProvider = ({ children }) => {
 
 	useEffect(() => {
 		if (!state?.user) {
-			return getUserInfo(oktaAuth);
+			return getUserInfo(dispatch);
 		}
 	}, [oktaAuth, state?.user]);
 

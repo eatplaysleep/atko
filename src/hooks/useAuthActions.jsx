@@ -1,5 +1,5 @@
 /** @format */
-import { actionTypes } from 'common';
+import { actionTypes } from 'providers/AuthProvider/AuthReducer';
 
 import { useOktaAuth } from '@okta/okta-react';
 // import { removeNils } from '@okta/okta-auth-js';

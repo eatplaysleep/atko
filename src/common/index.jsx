@@ -10,7 +10,9 @@ import { Security } from '@okta/okta-react';
 import AuthProvider from 'providers/AuthProvider/AuthContext';
 import AuthDispatchContext from 'providers/AuthProvider/AuthDispatcher';
 import { actionTypes } from 'providers/AuthProvider/AuthReducer';
-import { useAuthDispatch, useAuthState, useAuthActions } from 'hooks';
+import useAuthActions from 'hooks/useAuthActions';
+import useAuthDispatch from 'hooks/useAuthDispatch';
+import useAuthState from 'hooks/useAuthState';
 
 // const utils = {
 // 	getUserInfo,
