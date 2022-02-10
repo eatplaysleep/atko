@@ -13,7 +13,7 @@ import theme from 'assets/theme';
 // Material Kit 2 React routes
 import { navbar as routes } from 'routes';
 
-import { Home, Me, Navbar } from 'components';
+import { Components, Home, Me, Navbar } from 'components';
 import 'styles/App.css';
 
 const oktaAuth = new Okta.Auth(config.authConfig.oidc);
@@ -80,6 +80,7 @@ const App = () => {
 							{getRoutes(routes)}
 							<Route path='/' exact component={Home} />
 							{/* <Route path='/signin' element={<SignInBasic />} /> */}
+							<Route path='/components' exact component={Components} />
 							<Route path='/me' exact component={Me} />
 							<Route path='*' component={Home} />
 						</Switch>

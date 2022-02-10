@@ -1,5 +1,8 @@
 /** @format */
 
+// Buttons
+import LoadingButton from './atoms/Buttons/LoadingButton';
+
 // Feedback
 import Modal from './atoms/Feedback/Modal';
 
@@ -23,6 +26,7 @@ import ProfileCard from './organisms/ProfileCard';
 
 export {
 	AuthenticatorsCard,
+	LoadingButton,
 	Modal,
 	Navbar,
 	NavbarDropdown,
@@ -38,5 +42,6 @@ export {
 };
 
 export * from './pages/Home';
+export * from './pages/Components';
 export * from './pages/Me';
 export * from './pages/SignIn';
